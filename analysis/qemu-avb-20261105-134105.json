@@ -1,0 +1,82 @@
+﻿{
+    "timestamp":  "20261105-134105",
+    "qemu":  "D:\\git\\HyperOS-QEMU-Lab\\tools\\qemu\\qemu-system-aarch64.exe",
+    "ram_gib":  2,
+    "vcpus":  2,
+    "timeout_seconds":  600,
+    "fstab_suffix":  "qemu",
+    "process_exited_before_timeout":  true,
+    "exit_code":  -1,
+    "stopped_by_timeout":  false,
+    "append":  "console=ttyAMA0,115200 earlycon=pl011,mmio32,0x9000000 ignore_loglevel loglevel=8 rdinit=/init androidboot.fstab_suffix=qemu androidboot.hardware=qcom androidboot.slot_suffix=_a androidboot.boot_devices=4010000000.pcie androidboot.vbmeta.size=13248 androidboot.vbmeta.hash_alg=sha256 androidboot.vbmeta.digest=159a1499647e600c82ac64aaa349625323485a8774ce2ea99d05a345e5ecd1e0 printk.time=1 printk.devkmsg=on log_buf_len=8M trace_buf_size=1M trace_event=sched:sched_process_exec,sched:sched_process_exit tp_printk",
+    "avb_bootconfig":  {
+                           "source_images":  "D:\\git\\HyperOS-QEMU-Lab\\analysis\\source-partitions\\peridot_id_global_images_OS3.0.304.0.WNPIDXM_16.0\\images",
+                           "chain_order":  [
+                                               "vbmeta.img",
+                                               "boot.img",
+                                               "recovery.img",
+                                               "vbmeta_system.img"
+                                           ],
+                           "size":  13248,
+                           "hash_alg":  "sha256",
+                           "digest":  "159a1499647e600c82ac64aaa349625323485a8774ce2ea99d05a345e5ecd1e0",
+                           "components":  [
+                                              {
+                                                  "partition_image":  "vbmeta.img",
+                                                  "vbmeta_offset":  0,
+                                                  "vbmeta_size":  7168,
+                                                  "sha256":  "4d4774ef6525ed940da272591e4a2dd7361f40cc57147d671832f5de81349eb4"
+                                              },
+                                              {
+                                                  "partition_image":  "boot.img",
+                                                  "vbmeta_offset":  35454976,
+                                                  "vbmeta_size":  1728,
+                                                  "sha256":  "6aac4c2bf9386cbccf9c9d2bfc199df6fa8623ce7681f9cd9a0930d5410eb9e8"
+                                              },
+                                              {
+                                                  "partition_image":  "recovery.img",
+                                                  "vbmeta_offset":  28069888,
+                                                  "vbmeta_size":  1472,
+                                                  "sha256":  "bd3e0e41cefb5928e1991efb5517514e0d74cd7f95e48663489c17e5ccd4a5d6"
+                                              },
+                                              {
+                                                  "partition_image":  "vbmeta_system.img",
+                                                  "vbmeta_offset":  0,
+                                                  "vbmeta_size":  2880,
+                                                  "sha256":  "6f1d8f80668caa5a51ab6df1b40bae3809ed62becb7282292f0ae70064464b32"
+                                              }
+                                          ]
+                       },
+    "arguments":  [
+                      "-machine",
+                      "virt",
+                      "-cpu",
+                      "max",
+                      "-m",
+                      "2G",
+                      "-smp",
+                      "2",
+                      "-kernel",
+                      "D:\\git\\HyperOS-QEMU-Lab\\analysis\\stock-kernel-extracted.bin",
+                      "-initrd",
+                      "D:\\git\\HyperOS-QEMU-Lab\\analysis\\qemu-virt-fstab-ramdisk.cpio",
+                      "-append",
+                      "console=ttyAMA0,115200 earlycon=pl011,mmio32,0x9000000 ignore_loglevel loglevel=8 rdinit=/init androidboot.fstab_suffix=qemu androidboot.hardware=qcom androidboot.slot_suffix=_a androidboot.boot_devices=4010000000.pcie androidboot.vbmeta.size=13248 androidboot.vbmeta.hash_alg=sha256 androidboot.vbmeta.digest=159a1499647e600c82ac64aaa349625323485a8774ce2ea99d05a345e5ecd1e0 printk.time=1 printk.devkmsg=on log_buf_len=8M trace_buf_size=1M trace_event=sched:sched_process_exec,sched:sched_process_exit tp_printk",
+                      "-drive",
+                      "if=none,id=romdisk,file=D:\\git\\HyperOS-QEMU-Lab\\analysis\\qemu-avb-20261105-134105.qcow2,format=qcow2",
+                      "-device",
+                      "nvme,drive=romdisk,serial=HYPEROS-QEMU-AVB",
+                      "-display",
+                      "none",
+                      "-monitor",
+                      "none",
+                      "-serial",
+                      "file:D:\\git\\HyperOS-QEMU-Lab\\analysis\\qemu-avb-20261105-134105.serial.log",
+                      "-no-reboot"
+                  ],
+    "kernel":  "D:\\git\\HyperOS-QEMU-Lab\\analysis\\stock-kernel-extracted.bin",
+    "ramdisk":  "D:\\git\\HyperOS-QEMU-Lab\\analysis\\qemu-virt-fstab-ramdisk.cpio",
+    "base_disk":  "D:\\git\\HyperOS-QEMU-Lab\\analysis\\hyperos-virt-test-16g.raw",
+    "overlay":  "D:\\git\\HyperOS-QEMU-Lab\\analysis\\qemu-avb-20261105-134105.qcow2",
+    "serial_log":  "D:\\git\\HyperOS-QEMU-Lab\\analysis\\qemu-avb-20261105-134105.serial.log"
+}

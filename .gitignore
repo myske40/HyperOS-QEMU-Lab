@@ -1,0 +1,21 @@
+# Generated/local data and firmware are intentionally excluded from the public repository.
+firmware/**
+analysis/*.raw
+analysis/*.qcow2
+analysis/*.cpio
+analysis/*.bin
+analysis/*.img
+analysis/*.tgz
+analysis/*.zip
+analysis/**/target/
+analysis/**/build/
+tools/**/rustup-home/
+tools/**/go-sdk.zip
+tools/**/go1.25.4.zip
+**/__pycache__/
+*.pyc
+*.pyo
+*.key
+*.pem
+*.p12
+*.keystore

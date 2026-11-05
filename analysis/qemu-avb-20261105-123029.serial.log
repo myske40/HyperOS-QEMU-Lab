@@ -1,0 +1,1760 @@
+[    0.000000][    T0] Booting Linux on physical CPU 0x0000000000 [0x000f0510]
+[    0.000000][    T0] Linux version 6.1.138-android14-11-g0c3d559bcd85-ab14529422 (build-user@build-host) (Android (10087095, +pgo, +bolt, +lto, -mlgo, based on r487747c) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362), LLD 17.0.2) #1 SMP PREEMPT Wed Dec  3 02:05:30 UTC 2025
+[    0.000000][    T0] random: crng init done
+[    0.000000][    T0] Machine model: linux,dummy-virt
+[    0.000000][    T0] Stack Depot is disabled
+[    0.000000][    T0] KVM is not available. Ignoring kvm-arm.mode
+[    0.000000][    T0] earlycon: pl11 at MMIO32 0x0000000009000000 (options '')
+[    0.000000][    T0] printk: bootconsole [pl11] enabled
+[    0.000000][    T0] printk: debug: ignoring loglevel setting.
+[    0.000000][    T0] efi: UEFI not found.
+[    0.000000][    T0] Zone ranges:
+[    0.000000][    T0]   DMA32    [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000][    T0]   Normal   empty
+[    0.000000][    T0]   Device   empty
+[    0.000000][    T0] Movable zone start for each node
+[    0.000000][    T0] Early memory node ranges
+[    0.000000][    T0]   node   0: [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000][    T0] Initmem setup node 0 [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000][    T0] cma: Reserved 16 MiB at 0x00000000bc800000
+[    0.000000][    T0] psci: probing for conduit method from DT.
+[    0.000000][    T0] psci: PSCIv1.1 detected in firmware.
+[    0.000000][    T0] psci: Using standard PSCI v0.2 function IDs
+[    0.000000][    T0] psci: Trusted OS migration not required
+[    0.000000][    T0] psci: SMC Calling Convention v1.0
+[    0.000000][    T0] 'bootconfig' found on command line, but no bootconfig found
+[    0.000000][    T0] percpu: Embedded 30 pages/cpu s85224 r8192 d29464 u122880
+[    0.000000][    T0] pcpu-alloc: s85224 r8192 d29464 u122880 alloc=30*4096
+[    0.000000][    T0] pcpu-alloc: [0] 0 [0] 1 
+[    0.000000][    T0] Detected PIPT I-cache on CPU0
+[    0.000000][    T0] CPU features: SYS_ID_AA64MMFR1_EL1[11:8]: forced to 0
+[    0.000000][    T0] CPU features: detected: Address authentication (IMP DEF algorithm)
+[    0.000000][    T0] CPU features: detected: Hardware dirty bit management
+[    0.000000][    T0] CPU features: detected: Spectre-v4
+[    0.000000][    T0] alternatives: applying boot alternatives
+[    0.000000][    T0] Built 1 zonelists, mobility grouping on.  Total pages: 516096
+[    0.000000][    T0] Kernel command line: console=ttynull stack_depot_disable=on cgroup_disable=pressure kasan.page_alloc.sample=10 kasan.stacktrace=off kvm-arm.mode=protected bootconfig ioremap_guard console=ttyAMA0,115200 earlycon=pl011,mmio32,0x9000000 ignore_loglevel loglevel=8 rdinit=/init androidboot.fstab_suffix=qcom androidboot.hardware=qcom androidboot.slot_suffix=_a androidboot.boot_devices=4010000000.pcie androidboot.vbmeta.size=13248 androidboot.vbmeta.hash_alg=sha256 androidboot.vbmeta.digest=159a1499647e600c82ac64aaa349625323485a8774ce2ea99d05a345e5ecd1e0 printk.time=1 printk.devkmsg=on log_buf_len=8M trace_buf_size=1M trace_event=sched:sched_process_exec,sched:sched_process_exit tp_printk
+[    0.000000][    T0] cgroup: Disabling pressure control group feature
+[    0.000000][    T0] printk: log_buf_len: 8388608 bytes
+[    0.000000][    T0] printk: early log buf free: 128240(97%)
+[    0.000000][    T0] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000][    T0] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000][    T0] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.000000][    T0] Memory: 1898564K/2097152K available (16512K kernel code, 2026K rwdata, 11748K rodata, 4160K init, 634K bss, 182204K reserved, 16384K cma-reserved)
+[    0.000000][    T0] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000][    T0] trace event string verifier disabled
+[    0.000000][    T0] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000][    T0] rcu: 	RCU event tracing is enabled.
+[    0.000000][    T0] rcu: 	RCU restricting CPUs from NR_CPUS=32 to nr_cpu_ids=2.
+[    0.000000][    T0] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
+[    0.000000][    T0] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000][    T0] 	Tracing variant of Tasks RCU enabled.
+[    0.000000][    T0] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000][    T0] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.000000][    T0] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000][    T0] Root IRQ handler: gic_handle_irq
+[    0.000000][    T0] GICv2m: range[mem 0x08020000-0x08020fff], SPI[80:143]
+[    0.000000][    T0] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000][    T0] arch_timer: cp15 timer(s) running at 1000.00MHz (virt).
+[    0.000000][    T0] clocksource: arch_sys_counter: mask: 0x1fffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000127][    T0] sched_clock: 61 bits at 1000MHz, resolution 1ns, wraps every 4398046511103ns
+[    0.009610][    T0] kfence: initialized - using 524288 bytes for 63 objects at 0x(____ptrval____)-0x(____ptrval____)
+[    0.055904][    T0] Calibrating delay loop (skipped), value calculated using timer frequency.. 2000.00 BogoMIPS (lpj=4000000)
+[    0.065612][    T0] pid_max: default: 32768 minimum: 301
+[    0.078456][    T0] LSM: Security Framework initializing
+[    0.083954][    T0] SELinux:  Initializing.
+[    0.094604][    T0] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.096289][    T0] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.213094][    T1] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.243452][    T1] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.245709][    T1] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.248600][    T1] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.249561][    T1] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.255962][    T1] rcu: Hierarchical SRCU implementation.
+[    0.256701][    T1] rcu: 	Max phase no-delay instances is 1000.
+[    0.305286][    T1] dyndbg: Ignore empty _ddebug table in a CONFIG_DYNAMIC_DEBUG_CORE build
+[    0.311104][    T1] EFI services will not be available.
+[    0.317978][    T1] smp: Bringing up secondary CPUs ...
+[    0.347080][    T0] Detected PIPT I-cache on CPU1
+[    0.358026][    T0] cacheinfo: Unable to detect cache hierarchy for CPU 1
+[    0.365001][    T0] CPU1: Booted secondary processor 0x0000000001 [0x000f0510]
+[    0.375820][    T1] smp: Brought up 1 node, 2 CPUs
+[    0.379885][    T1] SMP: Total of 2 processors activated.
+[    0.381658][    T1] CPU features: detected: Branch Target Identification
+[    0.382531][    T1] CPU features: detected: 32-bit EL0 Support
+[    0.383255][    T1] CPU features: detected: 32-bit EL1 Support
+[    0.384195][    T1] CPU features: detected: ARMv8.4 Translation Table Level
+[    0.385212][    T1] CPU features: detected: Instruction cache invalidation not required for I/D coherence
+[    0.387149][    T1] CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+[    0.388930][    T1] CPU features: detected: Common not Private translations
+[    0.389777][    T1] CPU features: detected: CRC32 instructions
+[    0.390527][    T1] CPU features: detected: Data cache clean to Point of Deep Persistence
+[    0.393618][    T1] CPU features: detected: Data cache clean to Point of Persistence
+[    0.395111][    T1] CPU features: detected: E0PD
+[    0.395667][    T1] CPU features: detected: Enhanced Counter Virtualization
+[    0.396467][    T1] CPU features: detected: Enhanced Privileged Access Never
+[    0.397502][    T1] CPU features: detected: Generic authentication (IMP DEF algorithm)
+[    0.398603][    T1] CPU features: detected: RCpc load-acquire (LDAPR)
+[    0.399820][    T1] CPU features: detected: LSE atomic instructions
+[    0.400682][    T1] CPU features: detected: Privileged Access Never
+[    0.401615][    T1] CPU features: detected: RAS Extension Support
+[    0.402793][    T1] CPU features: detected: Random Number Generator
+[    0.403853][    T1] CPU features: detected: Speculation barrier (SB)
+[    0.404528][    T1] CPU features: detected: Stage-2 Force Write-Back
+[    0.405357][    T1] CPU features: detected: Trap EL0 IMPLEMENTATION DEFINED functionality
+[    0.406463][    T1] CPU features: detected: TLB range maintenance instructions
+[    0.407391][    T1] CPU features: detected: WFx with timeout
+[    0.408619][    T1] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+[    0.409758][    T1] CPU features: detected: Scalable Vector Extension
+[    0.457489][    T1] SVE: maximum available vector length 256 bytes per vector
+[    0.470259][    T1] SVE: default vector length 64 bytes per vector
+[    0.476483][    T1] CPU: All CPU(s) started at EL1
+[    0.477546][    T1] alternatives: applying system-wide alternatives
+[    0.697066][    T1] Registered cp15_barrier emulation handler
+[    0.699675][    T1] Registered setend emulation handler
+[    0.707606][    T1] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.711735][    T1] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.736047][    T1] pinctrl core: initialized pinctrl subsystem
+[    0.794129][    T1] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.847278][    T1] DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+[    0.852603][    T1] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.854394][    T1] audit: initializing netlink subsys (disabled)
+[    0.860960][   T29] audit: type=2000 audit(0.524:1): state=initialized audit_enabled=0 res=1
+[    0.887375][    T1] thermal_sys: Registered thermal governor 'step_wise'
+[    0.887823][    T1] thermal_sys: Registered thermal governor 'user_space'
+[    0.889037][    T1] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.899222][    T1] cpuidle: using governor menu
+[    0.905399][    T1] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.915031][    T1] ASID allocator initialised with 65536 entries
+[    0.921249][    T1] Serial: AMBA PL011 UART driver
+[    1.043878][    T1] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 13, base_baud = 0) is a PL011 rev1
+[    1.048902][    T1] printk: console [ttyAMA0] enabled
+[    1.048902][    T1] printk: console [ttyAMA0] enabled
+[    1.050628][    T1] printk: bootconsole [pl11] disabled
+[    1.050628][    T1] printk: bootconsole [pl11] disabled
+[    1.080547][    T1] KASLR enabled
+[    1.253671][    T1] iommu: Default domain type: Translated 
+[    1.256937][    T1] iommu: DMA domain TLB invalidation policy: strict mode 
+[    1.280016][    T1] SCSI subsystem initialized
+[    1.284418][    T1] usbcore: registered new interface driver usbfs
+[    1.286612][    T1] usbcore: registered new interface driver hub
+[    1.288608][    T1] usbcore: registered new device driver usb
+[    1.293961][    T1] mc: Linux media interface: v0.10
+[    1.295950][    T1] videodev: Linux video capture interface: v2.00
+[    1.299683][    T1] pps_core: LinuxPPS API ver. 1 registered
+[    1.300426][    T1] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.301770][    T1] PTP clock support registered
+[    1.303036][    T1] EDAC MC: Ver: 3.0.0
+[    1.317493][    T1] Advanced Linux Sound Architecture Driver Initialized.
+[    1.352852][    T1] clocksource: Switched to clocksource arch_sys_counter
+[    1.370067][    T1] VFS: Disk quotas dquot_6.6.0
+[    1.371126][    T1] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.386614][    T1] NET: Registered PF_INET protocol family
+[    1.393834][    T1] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    1.421610][    T1] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    1.426062][    T1] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.429129][    T1] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    1.432817][    T1] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    1.435942][    T1] TCP: Hash tables configured (established 16384 bind 16384)
+[    1.443655][    T1] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    1.446672][    T1] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    1.453121][    T1] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.455815][    T1] NET: Registered PF_XDP protocol family
+[    1.457914][    T1] PCI: CLS 0 bytes, default 64
+[    1.471727][    T1] kvm [1]: HYP mode not available
+[    1.496388][    T1] Initialise system trusted keyrings
+[    1.504990][    T1] workingset: timestamp_bits=46 max_order=19 bucket_order=0
+[    1.549999][   T10] Trying to unpack rootfs image as initramfs...
+[    1.614415][    T1] fuse: init (API version 7.38)
+[    1.712981][    T1] jitterentropy: Initialization failed with host not compliant with requirements: 2
+[    1.714857][    T1] Key type asymmetric registered
+[    1.715719][    T1] Asymmetric key parser 'x509' registered
+[    1.717735][    T1] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 239)
+[    1.723826][    T1] io scheduler mq-deadline registered
+[    1.725182][    T1] io scheduler kyber registered
+[    1.727648][    T1] io scheduler bfq registered
+[    1.751001][    T1] pl061_gpio 9030000.pl061: PL061 GPIO chip registered
+[    1.757849][    T1] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    1.761256][    T1] pci-host-generic 4010000000.pcie:       IO 0x003eff0000..0x003effffff -> 0x0000000000
+[    1.764731][    T1] pci-host-generic 4010000000.pcie:      MEM 0x0010000000..0x003efeffff -> 0x0010000000
+[    1.765786][    T1] pci-host-generic 4010000000.pcie:      MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    1.769104][    T1] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.771282][    T1] pci-host-generic 4010000000.pcie: ECAM at [mem 0x4010000000-0x401fffffff] for [bus 00-ff]
+[    1.777219][    T1] pci-host-generic 4010000000.pcie: PCI host bridge to bus 0000:00
+[    1.778999][    T1] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.780209][    T1] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    1.783391][    T1] pci_bus 0000:00: root bus resource [mem 0x10000000-0x3efeffff]
+[    1.785083][    T1] pci_bus 0000:00: root bus resource [mem 0x8000000000-0xffffffffff]
+[    1.791215][    T1] pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000
+[    1.809348][    T1] pci 0000:00:01.0: [1af4:1000] type 00 class 0x020000
+[    1.811411][    T1] pci 0000:00:01.0: reg 0x10: [io  0x0000-0x001f]
+[    1.812801][    T1] pci 0000:00:01.0: reg 0x14: [mem 0x00000000-0x00000fff]
+[    1.814169][    T1] pci 0000:00:01.0: reg 0x20: [mem 0x00000000-0x00003fff 64bit pref]
+[    1.817174][    T1] pci 0000:00:01.0: reg 0x30: [mem 0x00000000-0x0003ffff pref]
+[    1.823021][    T1] pci 0000:00:02.0: [1b36:0010] type 00 class 0x010802
+[    1.824980][    T1] pci 0000:00:02.0: reg 0x10: [mem 0x00000000-0x00003fff 64bit]
+[    1.828822][    T1] pci 0000:00:02.0: enabling Extended Tags
+[    1.841750][    T1] pci 0000:00:01.0: BAR 6: assigned [mem 0x10000000-0x1003ffff pref]
+[    1.843666][    T1] pci 0000:00:01.0: BAR 4: assigned [mem 0x8000000000-0x8000003fff 64bit pref]
+[    1.845542][    T1] pci 0000:00:02.0: BAR 0: assigned [mem 0x8000004000-0x8000007fff 64bit]
+[    1.846553][    T1] pci 0000:00:01.0: BAR 1: assigned [mem 0x10040000-0x10040fff]
+[    1.847425][    T1] pci 0000:00:01.0: BAR 0: assigned [io  0x1000-0x101f]
+[    1.878897][    T1] printk: console [ttynull0] enabled
+[    1.888155][   T21] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    2.101822][    T1] brd: module loaded
+[    2.253322][    T1] loop: module loaded
+[    2.301904][    T1] nvme nvme0: pci function 0000:00:02.0
+[    2.304936][    T8] nvme 0000:00:02.0: enabling device (0000 -> 0002)
+[    2.377612][    T1] wireguard: WireGuard 1.0.0 loaded. See www.wireguard.com for information.
+[    2.379341][    T1] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+[    2.388144][    T1] MACsec IEEE 802.1AE
+[    2.398178][    T1] tun: Universal TUN/TAP device driver, 1.6
+[    2.418352][    T1] usbcore: registered new interface driver uas
+[    2.419858][    T1] usbcore: registered new interface driver usb-storage
+[    2.447058][    T8] nvme nvme0: 2/0/0 default/read/poll queues
+[    2.453067][    T1] usbcore: registered new interface driver xpad
+[    2.466128][    T8] nvme nvme0: Ignoring bogus Namespace Identifiers
+[    2.492270][    T1] rtc-pl031 9010000.pl031: registered as rtc0
+[    2.495023][    T1] rtc-pl031 9010000.pl031: setting system clock to 2026-11-05T05:30:33 UTC (1793856633)
+[    2.510281][    T1] gspca_main: v2.14.0 registered
+[    2.511318][    T1] usbcore: registered new interface driver uvcvideo
+[    2.517755][    T8]  nvme0n1: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10
+[    2.527021][    T1] device-mapper: uevent: version 1.0.3
+[    2.531441][    T1] device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+[    2.554997][    T1] sdhci: Secure Digital Host Controller Interface driver
+[    2.555830][    T1] sdhci: Copyright(c) Pierre Ossman
+[    2.556326][    T1] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.561890][    T1] hid: raw HID events driver (C) Jiri Kosina
+[    2.579615][    T1] usbcore: registered new interface driver usbhid
+[    2.580303][    T1] usbhid: USB HID core driver
+[    2.586860][    T1] ashmem: initialized
+[    2.600693][    T1] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    2.608121][    T1] gnss: GNSS driver registered with major 504
+[    2.616836][    T1] usbcore: registered new interface driver snd-usb-audio
+[    2.629981][    T1] GACT probability NOT on
+[    2.631271][    T1] Mirror/redirect action on
+[    2.633637][    T1] netem: version 1.3
+[    2.635087][    T1] u32 classifier
+[    2.635506][    T1]     input device check on
+[    2.636036][    T1]     Actions configured
+[    2.914344][    T1] xt_time: kernel timezone is -0000
+[    2.916022][    T1] ipip: IPv4 and MPLS over IPv4 tunneling driver
+[    2.924451][    T1] gre: GRE over IPv4 demultiplexor driver
+[    2.925789][    T1] ip_gre: GRE over IPv4 tunneling driver
+[    2.938403][    T1] IPv4 over IPsec tunneling driver
+[    2.950802][    T1] Initializing XFRM netlink socket
+[    2.952313][    T1] IPsec XFRM device driver
+[    2.959705][    T1] NET: Registered PF_INET6 protocol family
+[    3.001259][    T1] Segment Routing with IPv6
+[    3.002424][    T1] In-situ OAM (IOAM) with IPv6
+[    3.006709][    T1] mip6: Mobile IPv6
+[    3.018425][    T1] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.033387][    T1] ip6_gre: GRE over IPv6 tunneling driver
+[    3.041687][    T1] NET: Registered PF_PACKET protocol family
+[    3.043266][    T1] NET: Registered PF_KEY protocol family
+[    3.047054][    T1] NET: Registered PF_VSOCK protocol family
+[    3.077836][    T1] registered taskstats version 1
+[    3.080370][    T1] Loading compiled-in X.509 certificates
+[    3.119755][   T58] sched_process_exit: comm=cryptomgr_probe pid=58 prio=120
+[    3.133505][    T1] Loaded X.509 cert 'Build time autogenerated kernel key: e975fde167bbb4b44cd982e592b5fd03bf2971d5'
+[    3.136515][    T1] page_owner is disabled
+[    3.142694][    T1] Key type .fscrypt registered
+[    3.143572][    T1] Key type fscrypt-provisioning registered
+[    3.205723][    T1] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    3.247457][    T1] clk: Disabling unused clocks
+[    3.250553][    T1] ALSA device list:
+[    3.251501][    T1]   No soundcards found.
+[    3.350188][   T10] Freeing initrd memory: 68248K
+[    3.362063][    T1] uart-pl011 9000000.pl011: no DMA platform data
+[    3.467919][    T1] Freeing unused kernel memory: 4160K
+[    3.473914][    T1] Run /init as init process
+[    3.474794][    T1]   with arguments:
+[    3.475510][    T1]     /init
+[    3.476039][    T1]   with environment:
+[    3.476728][    T1]     HOME=/
+[    3.477831][    T1]     TERM=linux
+[    3.571482][    T1] sched_process_exec: filename=/init pid=1 old_pid=1
+[    3.866456][    T1] init: init first stage started!
+[    4.045333][    T1] init: malformed modules.softdep at token mpam_policy
+[    4.098072][    T1] init: Copied ramdisk prop to /second_stage_resources/system/etc/ramdisk/build.prop
+[    4.114121][    T1] init: [libfs_mgr] ReadFstabFromDt(): failed to read fstab from dt
+[    4.190903][    T1] init: Using Android DT directory /proc/device-tree/firmware/android/
+[    4.562425][    T1] init: [libfs_mgr] Created logical partition odm_a on device /dev/block/dm-0
+[    4.564775][    T1] init: [libfs_mgr] Skipping zero-length logical partition: odm_b
+[    4.578732][    T1] init: [libfs_mgr] Created logical partition product_a on device /dev/block/dm-1
+[    4.579921][    T1] init: [libfs_mgr] Skipping zero-length logical partition: product_b
+[    4.593608][    T1] init: [libfs_mgr] Created logical partition system_a on device /dev/block/dm-2
+[    4.595685][    T1] init: [libfs_mgr] Skipping zero-length logical partition: system_b
+[    4.608054][    T1] init: [libfs_mgr] Created logical partition system_dlkm_a on device /dev/block/dm-3
+[    4.610270][    T1] init: [libfs_mgr] Skipping zero-length logical partition: system_dlkm_b
+[    4.630006][    T1] init: [libfs_mgr] Created logical partition system_ext_a on device /dev/block/dm-4
+[    4.631491][    T1] init: [libfs_mgr] Skipping zero-length logical partition: system_ext_b
+[    4.646677][    T1] init: [libfs_mgr] Created logical partition vendor_a on device /dev/block/dm-5
+[    4.649129][    T1] init: [libfs_mgr] Skipping zero-length logical partition: vendor_b
+[    4.659468][    T1] init: [libfs_mgr] Created logical partition vendor_dlkm_a on device /dev/block/dm-6
+[    4.661168][    T1] init: [libfs_mgr] Skipping zero-length logical partition: vendor_dlkm_b
+[    4.673152][    T1] init: [libfs_mgr] Created logical partition mi_ext_a on device /dev/block/dm-7
+[    4.674784][    T1] init: [libfs_mgr] Skipping zero-length logical partition: mi_ext_b
+[    4.678873][    T1] init: DSU not detected, proceeding with normal boot
+[    4.766193][    T1] init: [libfs_avb] Returning avb_handle with status: Success
+[    4.781186][    T1] init: [libfs_avb] : Error verifying vbmeta image: OK_NOT_SIGNED
+[    4.782618][    T1] init: [libfs_avb] : allow verification error is not allowed
+[    4.785166][    T1] init: [libfs_avb] Failed to load vbmeta: /dev/block/dm-2
+[    4.786848][    T1] init: Failed to load offline vbmeta for /system
+[    4.789474][    T1] init: Fallback to built-in hashtree for /system
+[    4.806307][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-2 /dev/block/dm-2 4096 4096 171740 171740 sha256 d8f45493b77d170b6c30334c2fe36bf056350f82bf2265607d215b6bbe963885 b007d78d47aa04a2838db8b1698ad70f03b5646069c902bc696b87ee4cbc7f75 10 use_fec_from_device /dev/block/dm-2 fec_roots 2 fec_blocks 173094 fec_start 173094 restart_on_corruption ignore_zero_blocks'
+[    4.822763][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    4.846470][    T1] device-mapper: table: 254:8: adding target device (start sect 0 len 1373920) caused an alignment inconsistency
+[    4.851868][    T1] device-mapper: table: 254:8: adding target device (start sect 0 len 1373920) caused an alignment inconsistency
+[    4.887493][    T1] erofs: (device dm-8): mounted with root inode @ nid 56.
+[    4.891231][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-8,target=/system,type=erofs)=0: Success
+[    4.915482][    T1] init: Switching root to '/system'
+[    4.942131][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-4 /dev/block/dm-4 4096 4096 150981 150981 sha256 8bec4535c51e2cee69b65f7f1c7e38608d07169c6157ef448470b0cc8e842a8d b007d78d47aa04a2838db8b1698ad70f03b5646069c902bc696b87ee4cbc7f75 10 use_fec_from_device /dev/block/dm-4 fec_roots 2 fec_blocks 152172 fec_start 152172 restart_on_corruption ignore_zero_blocks'
+[    4.953391][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    4.962417][    T1] device-mapper: table: 254:9: adding target device (start sect 0 len 1207848) caused an alignment inconsistency
+[    4.966256][    T1] device-mapper: table: 254:9: adding target device (start sect 0 len 1207848) caused an alignment inconsistency
+[    4.980530][    T1] erofs: (device dm-9): mounted with root inode @ nid 40.
+[    4.982746][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-9,target=/system_ext,type=erofs)=0: Success
+[    4.991036][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-1 /dev/block/dm-1 4096 4096 819364 819364 sha256 4deaa64731c0d043050c9318ed4a5baf01f2d8b8fe7af4f94c40bcf92479ffc2 80f67535d423a62e0299b22aaf02c6b3d07485ff400a9732485c9c06e07e713b 10 use_fec_from_device /dev/block/dm-1 fec_roots 2 fec_blocks 825818 fec_start 825818 restart_on_corruption ignore_zero_blocks'
+[    4.998285][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.005962][    T1] device-mapper: table: 254:10: adding target device (start sect 0 len 6554912) caused an alignment inconsistency
+[    5.009719][    T1] device-mapper: table: 254:10: adding target device (start sect 0 len 6554912) caused an alignment inconsistency
+[    5.024542][    T1] erofs: (device dm-10): mounted with root inode @ nid 40.
+[    5.025751][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-10,target=/product,type=erofs)=0: Success
+[    5.039315][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-7 /dev/block/dm-7 4096 4096 207961 207961 sha256 db77155e49fcd5b98a2a52655b818b0ddb5899f2b866c95b0e1fc9df5eacfdd7 866df3cbd5d95653e4b8445ed04617615481b158d9c6b1ff5ba370b8c319a217 10 use_fec_from_device /dev/block/dm-7 fec_roots 2 fec_blocks 209600 fec_start 209600 restart_on_corruption ignore_zero_blocks'
+[    5.046664][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.054043][    T1] device-mapper: table: 254:11: adding target device (start sect 0 len 1663688) caused an alignment inconsistency
+[    5.058162][    T1] device-mapper: table: 254:11: adding target device (start sect 0 len 1663688) caused an alignment inconsistency
+[    5.073248][    T1] erofs: (device dm-11): mounted with root inode @ nid 38.
+[    5.074897][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-11,target=/mnt/vendor/mi_ext,type=erofs)=0: Success
+[    5.086307][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-5 /dev/block/dm-5 4096 4096 103001 103001 sha256 f3589740033da39959310bd67d3e154f5f987c87e3ae8d8881dbf1e8a7a42640 1b80eff7c4ba1af88766c37fed8b7312314c5367f1e54af9fbbf190eaf25f387 10 use_fec_from_device /dev/block/dm-5 fec_roots 2 fec_blocks 103814 fec_start 103814 restart_on_corruption ignore_zero_blocks'
+[    5.096623][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.104483][    T1] device-mapper: table: 254:12: adding target device (start sect 0 len 824008) caused an alignment inconsistency
+[    5.108679][    T1] device-mapper: table: 254:12: adding target device (start sect 0 len 824008) caused an alignment inconsistency
+[    5.124704][    T1] erofs: (device dm-12): mounted with root inode @ nid 54.
+[    5.125900][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-12,target=/vendor,type=erofs)=0: Success
+[    5.136699][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-6 /dev/block/dm-6 4096 4096 7237 7237 sha256 e987a8f4402782e1fe20349f6528789e2440c7b600999ba49a9b7ad4bfbb1503 1b80eff7c4ba1af88766c37fed8b7312314c5367f1e54af9fbbf190eaf25f387 10 use_fec_from_device /dev/block/dm-6 fec_roots 2 fec_blocks 7295 fec_start 7295 restart_on_corruption ignore_zero_blocks'
+[    5.142957][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.150372][    T1] device-mapper: table: 254:13: adding target device (start sect 0 len 57896) caused an alignment inconsistency
+[    5.154032][    T1] device-mapper: table: 254:13: adding target device (start sect 0 len 57896) caused an alignment inconsistency
+[    5.166034][    T1] erofs: (device dm-13): mounted with root inode @ nid 39.
+[    5.167229][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-13,target=/vendor_dlkm,type=erofs)=0: Success
+[    5.177533][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-3 /dev/block/dm-3 4096 4096 3557 3557 sha256 351ddc1df7e3f90bd192a581856f70a81c780de7738e122a023543b829bf1644 1b80eff7c4ba1af88766c37fed8b7312314c5367f1e54af9fbbf190eaf25f387 10 use_fec_from_device /dev/block/dm-3 fec_roots 2 fec_blocks 3586 fec_start 3586 restart_on_corruption ignore_zero_blocks'
+[    5.184502][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.192543][    T1] device-mapper: table: 254:14: adding target device (start sect 0 len 28456) caused an alignment inconsistency
+[    5.196010][    T1] device-mapper: table: 254:14: adding target device (start sect 0 len 28456) caused an alignment inconsistency
+[    5.212553][    T1] erofs: (device dm-14): mounted with root inode @ nid 38.
+[    5.214798][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-14,target=/system_dlkm,type=erofs)=0: Success
+[    5.224469][    T1] init: [libfs_avb] Built verity table: '1 /dev/block/dm-0 /dev/block/dm-0 4096 4096 458854 458854 sha256 5e71d6fa158f04f931e25a539880c3b0cbda04c25dbf79a407e78626e70e4cb0 1b80eff7c4ba1af88766c37fed8b7312314c5367f1e54af9fbbf190eaf25f387 10 use_fec_from_device /dev/block/dm-0 fec_roots 2 fec_blocks 462469 fec_start 462469 restart_on_corruption ignore_zero_blocks'
+[    5.232644][    T1] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.239130][    T1] device-mapper: table: 254:15: adding target device (start sect 0 len 3670832) caused an alignment inconsistency
+[    5.243015][    T1] device-mapper: table: 254:15: adding target device (start sect 0 len 3670832) caused an alignment inconsistency
+[    5.268474][    T1] erofs: (device dm-15): mounted with root inode @ nid 43.
+[    5.270951][    T1] init: [libfs_mgr] __mount(source=/dev/block/dm-15,target=/odm,type=erofs)=0: Success
+[    5.723868][    T1] init: Skipped setting INIT_AVB_VERSION (not in recovery mode)
+[    5.727148][    T1] init: init first stage completed!
+[    5.806327][    T1] sched_process_exec: filename=/system/bin/init pid=1 old_pid=1
+[    7.645278][    T1] init: [libfstab] Using Android DT directory /proc/device-tree/firmware/android/
+[    7.659501][    T1] init: EarlySetupOverlays check: debug_build: 0, force_debuggable: 0, unlocked: 0, enable_overlay: 0: No such file or directory
+[    7.662573][    T1] init: EarlySetupOverlays is disabled non-debuggable build: No such file or directory
+[    7.682961][    T1] init: [libfstab] ReadDefaultFstab(): target default fstab path=/vendor/etc/fstab.qcom
+[    7.773947][    T1] init: Opening SELinux policy
+[    7.824214][    T1] init: /system/etc/selinux/plat_sepolicy_and_mapping.sha256 and /odm/etc/selinux/precompiled_sepolicy.plat_sepolicy_and_mapping.sha256 differ
+[    7.827268][    T1] init: Compiling SELinux policy
+[    7.933672][    T1] init: Missing /system/etc/selinux/plat_sepolicy_genfs_202404.cil; skipping
+[    8.005756][   T84] sched_process_exec: filename=/system/bin/secilc pid=84 old_pid=84
+[   54.072013][   T84] sched_process_exit: comm=secilc pid=84 prio=100
+[   54.087231][    T1] init: /system/bin/secilc: linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+[   54.090750][    T1] init: /system/bin/secilc: WARNING: linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+[   54.187843][    T1] init: Loading SELinux policy
+[   54.912511][    T1] SELinux:  policy capability network_peer_controls=1
+[   54.913640][    T1] SELinux:  policy capability open_perms=1
+[   54.914655][    T1] SELinux:  policy capability extended_socket_class=1
+[   54.915739][    T1] SELinux:  policy capability always_check_network=0
+[   54.917234][    T1] SELinux:  policy capability cgroup_seclabel=0
+[   54.918468][    T1] SELinux:  policy capability nnp_nosuid_transition=1
+[   54.919500][    T1] SELinux:  policy capability genfs_seclabel_symlinks=0
+[   54.921001][    T1] SELinux:  policy capability ioctl_skip_cloexec=0
+[   55.627890][   T29] audit: type=1403 audit(1793856686.628:2): auid=4294967295 ses=4294967295 lsm=selinux res=1
+[   55.644738][   T29] audit: type=1404 audit(1793856686.648:3): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295 enabled=1 old-enabled=1 lsm=selinux res=1
+[   55.977194][    T1] sched_process_exec: filename=/system/bin/init pid=1 old_pid=1
+[   56.404860][    T1] init: init second stage started!
+[   57.167978][    T1] selinux: SELinux: Loaded file context from:
+[   57.168877][    T1] selinux: 		/system/etc/selinux/plat_file_contexts
+[   57.169467][    T1] selinux: 		/system_ext/etc/selinux/system_ext_file_contexts
+[   57.170281][    T1] selinux: 		/product/etc/selinux/product_file_contexts
+[   57.170879][    T1] selinux: 		/vendor/etc/selinux/vendor_file_contexts
+[   57.171398][    T1] selinux: 		/odm/etc/selinux/odm_file_contexts
+[   57.950097][    T1] init: [libfstab] Using Android DT directory /proc/device-tree/firmware/android/
+[   58.115486][    T1] init: Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'
+[   58.215465][    T1] init: Overriding previous property 'dalvik.vm.heapsize':'36m' with new value '512m'
+[   58.235318][   T29] audit: type=1107 audit(1793856689.236:4): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=ro.adb.secure pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:build_prop:s0 tclass=property_service permissive=0'
+[   58.239697][    T1] init: Do not have permissions to set 'ro.adb.secure' to '1' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.249914][   T29] audit: type=1107 audit(1793856689.248:5): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=ro.rom.zone pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=0'
+[   58.250338][    T1] init: Do not have permissions to set 'ro.rom.zone' to '2' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.259529][    T1] init: Overriding previous property 'ro.control_privapp_permissions':'disable' with new value 'enforce'
+[   58.263281][   T29] audit: type=1107 audit(1793856689.264:6): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.backup.ntpServer pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=0'
+[   58.263601][    T1] init: Do not have permissions to set 'persist.backup.ntpServer' to '0.pool.ntp.org' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.289394][   T29] audit: type=1107 audit(1793856689.292:7): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=ro.qc.sdk.audio.fluencetype pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=0'
+[   58.289927][    T1] init: Do not have permissions to set 'ro.qc.sdk.audio.fluencetype' to 'none' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.300587][   T29] audit: type=1107 audit(1793856689.300:8): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.audio.fluence.voicecall pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:audio_prop:s0 tclass=property_service permissive=0'
+[   58.301817][    T1] init: Do not have permissions to set 'persist.audio.fluence.voicecall' to 'true' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.307865][   T29] audit: type=1107 audit(1793856689.308:9): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.audio.fluence.voicerec pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:audio_prop:s0 tclass=property_service permissive=0'
+[   58.308454][    T1] init: Do not have permissions to set 'persist.audio.fluence.voicerec' to 'false' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.314940][   T29] audit: type=1107 audit(1793856689.316:10): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.audio.fluence.speaker pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:audio_prop:s0 tclass=property_service permissive=0'
+[   58.315324][    T1] init: Do not have permissions to set 'persist.audio.fluence.speaker' to 'true' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.326598][   T29] audit: type=1107 audit(1793856689.328:11): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.bt.a2dp_offload_cap pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:bluetooth_prop:s0 tclass=property_service permissive=0'
+[   58.327110][    T1] init: Do not have permissions to set 'persist.vendor.bt.a2dp_offload_cap' to 'sbc-aptx-aptxtws-aptxhd-aac-ldac-lhdc' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.338864][    T1] init: Do not have permissions to set 'audio.sys.noisy.broadcast.delay' to '600' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.343163][    T1] init: Do not have permissions to set 'audio.sys.offload.pstimeout.secs' to '3' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.348935][    T1] init: Do not have permissions to set 'persist.audio.fluence.voicecomm' to 'true' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.364592][    T1] init: Do not have permissions to set 'persist.audio.button_jack.profile' to 'volume' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.368632][    T1] init: Do not have permissions to set 'persist.audio.button_jack.switch' to '0' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.393130][    T1] init: Do not have permissions to set 'persist.demo.hdmirotationlock' to 'false' in property file '/vendor/build.prop': SELinux permission check failed
+[   58.398112][    T1] init: Overriding previous property 'debug.sf.latch_unsignaled':'1' with new value '0'
+[   58.413247][    T1] init: Overriding previous property 'debug.stagefright.ccodec':'1' with new value '4'
+[   58.438163][    T1] init: Do not have permissions to set 'ro.product.vendor_dlkm.cert' to '24069PC21G' in property file '/vendor_dlkm/etc/build.prop': SELinux permission check failed
+[   58.442871][    T1] init: Do not have permissions to set 'ro.product.vendor_dlkm.marketname' to 'POCO F6' in property file '/vendor_dlkm/etc/build.prop': SELinux permission check failed
+[   58.465209][    T1] init: Overriding previous property 'ro.vendor.build.fingerprint':'Xiaomi/mivendor_sm8650_global/mivendor:14/UKQ1.240624.001/OS3.0.304.0.WNPIDXM:user/release-keys' with new value 'POCO/peridot_global/peridot:14/UKQ1.240624.001/OS3.0.304.0.WNPIDXM:user/release-keys'
+[   58.495210][    T1] init: Overriding previous property 'vendor.display.disable_sdr_dimming':'1' with new value '0'
+[   58.505578][    T1] init: Overriding previous property 'vendor.audio.compress_capture.aac.cut_off_freq':'-1' with new value '24000'
+[   58.517200][    T1] init: Do not have permissions to set 'nfc.fw.is_downloading' to 'false' in property file '/odm/etc/build.prop': SELinux permission check failed
+[   58.529900][    T1] init: Do not have permissions to set 'ro.vendor.media_performance_class' to '0' in property file '/odm/etc/build.prop': SELinux permission check failed
+[   58.534002][    T1] init: Overriding previous property 'ro.camerax.extensions.enabled':'true' with new value 'false'
+[   58.540381][    T1] init: Could not expand filename ': property 'ro.boot.product.hardware.sku' doesn't exist while expanding '/odm/etc/${ro.boot.product.hardware.sku}_${ro.boot.ptcountrycode}_build.prop'
+[   58.543309][    T1] init: Could not expand filename ': property 'ro.boot.product.hardware.sku' doesn't exist while expanding '/odm/etc/${ro.boot.product.hardware.sku}_${ro.boot.hwversion}.prop'
+[   58.579060][    T1] init: Overriding previous property 'ro.com.android.dataroaming':'true' with new value 'false'
+[   58.587207][    T1] init: Overriding previous property 'ro.build.version.incremental':'16OS3.1.260721.163843945.QCPEGL.S' with new value 'OS3.0.304.0.WNPIDXM'
+[   58.597269][    T1] init: Overriding previous property 'ro.config.ringtone':'Ring_Synth_04.ogg' with new value 'unknown'
+[   58.599001][    T1] init: Overriding previous property 'ro.config.notification_sound':'OnTheHunt.ogg' with new value 'unknown'
+[   58.602087][    T1] init: Overriding previous property 'ro.crypto.metadata_init_delete_all_keys.enabled':'true' with new value 'false'
+[   58.612992][    T1] init: Overriding previous property 'dalvik.vm.heapminfree':'8m' with new value '2m'
+[   58.616009][    T1] init: Overriding previous property 'dalvik.vm.madvise.vdexfile.size':'104857600' with new value '0'
+[   58.618318][    T1] init: Overriding previous property 'dalvik.vm.madvise.odexfile.size':'104857600' with new value '0'
+[   58.620881][    T1] init: Overriding previous property 'ro.hwui.max_texture_allocation_size':'209715200' with new value '314572800'
+[   58.631344][    T1] init: Overriding previous property 'bluetooth.profile.bap.broadcast.assist.enabled':'true' with new value 'false'
+[   58.633651][    T1] init: Overriding previous property 'bluetooth.profile.bap.broadcast.source.enabled':'true' with new value 'false'
+[   58.635904][    T1] init: Overriding previous property 'bluetooth.profile.bap.unicast.client.enabled':'true' with new value 'false'
+[   58.638303][    T1] init: Overriding previous property 'bluetooth.profile.ccp.server.enabled':'true' with new value 'false'
+[   58.640349][    T1] init: Overriding previous property 'bluetooth.profile.csip.set_coordinator.enabled':'true' with new value 'false'
+[   58.642986][    T1] init: Overriding previous property 'bluetooth.profile.hap.client.enabled':'true' with new value 'false'
+[   58.645341][    T1] init: Overriding previous property 'bluetooth.profile.mcp.server.enabled':'true' with new value 'false'
+[   58.647425][    T1] init: Overriding previous property 'bluetooth.profile.vcp.controller.enabled':'true' with new value 'false'
+[   58.650079][    T1] init: Overriding previous property 'persist.vendor.service.bdroid.soc.alwayson':'true' with new value 'false'
+[   58.668764][    T1] init_hook_E: Could not find /cust/cust_variant and /data/miui/cust_variant 
+[   58.676334][    T1] init_hook_I: cust prop white key: persist.sys.timezone
+[   58.678639][    T1] init_hook_I: cust prop white key: ro.carrier.name
+[   58.679781][    T1] init_hook_I: cust prop white key: ro.miui.cust_variant
+[   58.681176][    T1] init_hook_I: cust prop white key: ro.miui.region
+[   58.682185][    T1] init_hook_I: cust prop white key: ro.product.locale.language
+[   58.683359][    T1] init_hook_I: cust prop white key: ro.product.locale.region
+[   58.684549][    T1] init_hook_I: cust prop white key: ro.miui.mcc
+[   58.685437][    T1] init_hook_I: cust prop white key: ro.miui.mnc
+[   58.686353][    T1] init_hook_I: cust prop white key: ro.com.android.mobiledata
+[   58.687499][    T1] init_hook_I: cust prop white key: ro.build.hardware.version
+[   58.688946][    T1] init_hook_I: cust prop white key: ro.com.google.clientidbase
+[   58.689948][    T1] init_hook_I: cust prop white key: ro.com.google.clientidbase.ms
+[   58.691181][    T1] init_hook_I: cust prop white key: ro.miui.cts
+[   58.692051][    T1] init_hook_I: cust prop white key: ro.miui.customized.region
+[   58.693162][    T1] init_hook_I: cust prop white key: ro.miui.customized_clientid
+[   58.694231][    T1] init_hook_I: cust prop white key: ro.miui.singlesim
+[   58.695254][    T1] init_hook_I: cust prop white key: ro.com.google.rlz_ap_whitelist
+[   58.696458][    T1] init_hook_I: cust prop white key: ro.com.google.rlzbrandcode
+[   58.698533][    T1] init_hook_I: cust prop white key: persist.miui.density_v2
+[   58.699969][    T1] init_hook_I: cust prop white key: ro.miui.cta
+[   58.700957][    T1] init_hook_I: cust prop white key: ro.miui.cust_hardware
+[   58.702096][    T1] init_hook_I: cust prop white key: persist.sys.miui_optimization
+[   58.703472][    T1] init_hook_I: cust prop white key: ro.vendor.miui.cust_variant
+[   58.705166][    T1] init_hook_I: cust prop white key: ro.vendor.miui.region
+[   58.706472][    T1] init_hook_I: cust prop white key: ro.vendor.miui.mcc
+[   58.707379][    T1] init_hook_I: cust prop white key: ro.vendor.miui.mnc
+[   58.708092][    T1] init_hook_I: cust prop white key: ro.vendor.miui.cts
+[   58.709402][    T1] init_hook_I: cust prop white key: ro.vendor.miui.customized.region
+[   58.710436][    T1] init_hook_I: cust prop white key: ro.vendor.miui.customized_clientid
+[   58.712224][    T1] init_hook_I: cust prop white key: ro.vendor.miui.singlesim
+[   58.713103][    T1] init_hook_I: cust prop white key: ro.vendor.miui.cta
+[   58.713940][    T1] init_hook_I: cust prop white key: ro.vendor.miui.cust_hardware
+[   58.714779][    T1] init_hook_I: cust prop white key: ro.miui.enterprise.licence
+[   58.715507][    T1] init_hook_I: cust prop white key: persist.sys.ent_activated
+[   58.717240][    T1] init_hook_I: cust prop white key: ro.facebook.partnerid
+[   58.736029][    T1] init: ro.mi.xms.version.incremental should not be set as cust prop
+[   58.738335][    T1] init: persist.sys.power_mode_support should not be set as cust prop
+[   58.739921][    T1] init: ro.mi.os.custfeatureresolve should not be set as cust prop
+[   58.741653][    T1] init: ro.appsflyer.preinstall.path should not be set as cust prop
+[   58.742921][    T1] init: ro.miui.pai.preinstall.path should not be set as cust prop
+[   58.745121][    T1] init: setupwizard.feature.enable_quick_enhanced_biometrics_flow should not be set as cust prop
+[   58.746507][    T1] init: ro.ai.os.version.code should not be set as cust prop
+[   58.747678][    T1] init: ro.wifi.tvendor.disable1 should not be set as cust prop
+[   58.749159][    T1] init: ro.ai.transparent.sandbox.enabled should not be set as cust prop
+[   58.750503][    T1] init: ro.product.mod_device should not be set as cust prop
+[   58.752269][    T1] init: ro.thermal.iec.enable should not be set as cust prop
+[   58.753577][    T1] init: ro.ai.os.version.name should not be set as cust prop
+[   58.754459][    T1] init: ro.miui.build.region should not be set as cust prop
+[   58.755331][    T1] init: setupwizard.feature.enable_quick_start_flow should not be set as cust prop
+[   58.756766][    T1] init: ro.mi.os.version.publish should not be set as cust prop
+[   58.757875][    T1] init: ro.mi.os.version.beta should not be set as cust prop
+[   58.759130][    T1] init: ro.mi.os.version.code should not be set as cust prop
+[   58.761245][    T1] init: ro.mi.os.version.name should not be set as cust prop
+[   58.762604][    T1] init: ro.mi.os.version.incremental should not be set as cust prop
+[   58.763835][    T1] init: ro.build.version.smr_baseversion should not be set as cust prop
+[   58.867686][    T1] init: Setting product property ro.product.brand to 'POCO' (from ro.product.odm.brand)
+[   58.870231][    T1] init: Setting product property ro.product.device to 'peridot' (from ro.product.odm.device)
+[   58.872613][    T1] init: Setting product property ro.product.manufacturer to 'Xiaomi' (from ro.product.odm.manufacturer)
+[   58.874893][    T1] init: Setting product property ro.product.model to '24069PC21G' (from ro.product.odm.model)
+[   58.876946][    T1] init: Setting product property ro.product.name to 'peridot_global' (from ro.product.odm.name)
+[   58.879292][    T1] init: Setting product property ro.product.marketname to 'POCO F6' (from ro.product.odm.marketname)
+[   58.881478][    T1] init: Setting product property ro.product.cert to '24069PC21G' (from ro.product.odm.cert)
+[   58.885882][    T1] init: Setting property 'ro.build.fingerprint' to 'POCO/peridot_global/peridot:16/BP2A.250605.031.A3/OS3.0.304.0.WNPIDXM:user/release-keys'
+[   58.891269][    T1] init: Setting property 'ro.product.cpu.abilist' to 'arm64-v8a'
+[   58.892531][    T1] init: Setting property 'ro.product.cpu.abilist32' to ''
+[   58.894013][    T1] init: Setting property 'ro.product.cpu.abilist64' to 'arm64-v8a'
+[   58.922739][    T1] init: Running restorecon...
+[   59.886516][    T1] init: Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000
+[   59.910065][    T1] init: Created socket '/dev/socket/property_service', mode 666, user 0, group 0
+[   60.054143][    T1] init: SetupMountNamespaces done
+[   60.096898][    T1] init: Forked subcontext for 'u:r:vendor_init:s0' with pid 87
+[   60.116164][    T1] init: Parsing file /system/etc/init/hw/init.rc...
+[   60.138534][    T1] init: Added '/init.environ.rc' to import list
+[   60.141423][    T1] init: Added '/system/etc/init/hw/init.usb.rc' to import list
+[   60.143119][    T1] init: Added '/init.qcom.rc' to import list
+[   60.144017][   T87] sched_process_exec: filename=/system/bin/init pid=87 old_pid=87
+[   60.144962][    T1] init: Added '/vendor/etc/init/hw/init.qcom.rc' to import list
+[   60.147146][    T1] init: Added '/system/etc/init/hw/init.usb.configfs.rc' to import list
+[   60.149989][    T1] init: Added '/system/etc/init/hw/init.zygote64.rc' to import list
+[   60.179411][    T1] init: Added '/system/etc/init/hw/init.boringssl.zygote64.rc' to import list
+[   60.244008][    T1] init: Parsing file /init.environ.rc...
+[   60.251699][    T1] init: Parsing file /system/etc/init/hw/init.usb.rc...
+[   60.266716][    T1] init: Parsing file /init.qcom.rc...
+[   60.269661][    T1] init: Unable to read config file '/init.qcom.rc': open() failed: No such file or directory
+[   60.285016][    T1] init: Parsing file /vendor/etc/init/hw/init.qcom.rc...
+[   60.297085][    T1] init: Added '/vendor/etc/init/hw/init.qti.ufs.rc' to import list
+[   60.298990][    T1] init: Added '/vendor/etc/init/hw/init.qcom.usb.rc' to import list
+[   60.301315][    T1] init: Added '/vendor/etc/init/hw/init.qcom.test.rc' to import list
+[   60.303073][    T1] init: Added '/vendor/etc/init/hw/init.target.rc' to import list
+[   60.305187][    T1] init: Added '/vendor/etc/init/hw/init.qcom.factory.rc' to import list
+[   60.377641][    T1] init: No user specified for service 'vendor.ssr_setup', so it is root.
+[   60.392614][    T1] init: No user specified for service 'vendor.wigig_supplicant', so it is root.
+[   60.395345][    T1] init: No user specified for service 'dhcpcd_wlan0', so it is root.
+[   60.397232][    T1] init: No user specified for service 'dhcpcd_bond0', so it is root.
+[   60.399117][    T1] init: No user specified for service 'dhcpcd_p2p', so it is root.
+[   60.402048][    T1] init: No user specified for service 'dhcpcd_wigig0', so it is root.
+[   60.403537][    T1] init: No user specified for service 'iprenew_wlan0', so it is root.
+[   60.405378][    T1] init: No user specified for service 'iprenew_bond0', so it is root.
+[   60.407295][    T1] init: No user specified for service 'iprenew_p2p', so it is root.
+[   60.409321][    T1] init: No user specified for service 'iprenew_wigig0', so it is root.
+[   60.413855][    T1] init: No user specified for service 'dhcpcd_bt-pan', so it is root.
+[   60.415694][    T1] init: No user specified for service 'iprenew_bt-pan', so it is root.
+[   60.418825][    T1] init: No user specified for service 'wifi-sdio-on', so it is root.
+[   60.429886][    T1] init: No user specified for service 'qlogd', so it is root.
+[   60.436727][    T1] init: No user specified for service 'vendor.power_off_alarm', so it is root.
+[   60.440823][    T1] init: No user specified for service 'bugreport', so it is root.
+[   60.449944][    T1] init: /vendor/etc/init/hw/init.qcom.rc: 1027: ParseTriggers() failed: unexported property trigger found: persist.dbg.keep_debugfs_mounted
+[   60.461478][    T1] init: Parsing file /vendor/etc/init/hw/init.qti.ufs.rc...
+[   60.474993][    T1] init: Parsing file /vendor/etc/init/hw/init.qcom.usb.rc...
+[   60.642025][    T1] init: Parsing file /vendor/etc/init/hw/init.qcom.test.rc...
+[   60.644852][    T1] init: Unable to read config file '/vendor/etc/init/hw/init.qcom.test.rc': open() failed: No such file or directory
+[   60.656647][    T1] init: Parsing file /vendor/etc/init/hw/init.target.rc...
+[   60.666581][    T1] init: Added '/vendor/etc/init/hw/init.qti.kernel.rc' to import list
+[   60.668907][    T1] init: Added '/vendor/etc/init/hw/init.batterysecret.rc' to import list
+[   60.670494][    T1] init: Added '/vendor/etc/init/hw/init.charge_logger.rc' to import list
+[   60.673694][    T1] init: Added '/vendor/etc/init/hw/init.mi_thermald.rc' to import list
+[   60.675439][    T1] init: Added '/odm/etc/init/hw/init.mi_ambient.rc' to import list
+[   60.701383][    T1] init: No user specified for service 'vendor.mdm_launcher', so it is root.
+[   60.725951][    T1] init: Parsing file /vendor/etc/init/hw/init.qti.kernel.rc...
+[   60.737394][    T1] init: Added '/vendor/etc/init/hw/init.qti.kernel.test.rc' to import list
+[   60.755004][    T1] init: /vendor/etc/init/hw/init.qti.kernel.rc: 219: ignored duplicate definition of service 'vendor.msm_irqbalance'
+[   60.760058][    T1] init: Parsing file /vendor/etc/init/hw/init.qti.kernel.test.rc...
+[   60.762691][    T1] init: Unable to read config file '/vendor/etc/init/hw/init.qti.kernel.test.rc': open() failed: No such file or directory
+[   60.769826][    T1] init: Parsing file /vendor/etc/init/hw/init.batterysecret.rc...
+[   60.777541][    T1] init: Parsing file /vendor/etc/init/hw/init.charge_logger.rc...
+[   60.780130][    T1] init: Unable to read config file '/vendor/etc/init/hw/init.charge_logger.rc': open() failed: No such file or directory
+[   60.786808][    T1] init: Parsing file /vendor/etc/init/hw/init.mi_thermald.rc...
+[   60.794698][    T1] init: Parsing file /odm/etc/init/hw/init.mi_ambient.rc...
+[   60.797313][    T1] init: Unable to read config file '/odm/etc/init/hw/init.mi_ambient.rc': open() failed: No such file or directory
+[   60.813943][    T1] init: Parsing file /vendor/etc/init/hw/init.qcom.factory.rc...
+[   60.844732][    T1] init: Parsing file /system/etc/init/hw/init.usb.configfs.rc...
+[   60.876323][    T1] init: Parsing file /system/etc/init/hw/init.zygote64.rc...
+[   60.886675][    T1] init: Parsing file /system/etc/init/hw/init.boringssl.zygote64.rc...
+[   60.891267][    T1] init: Parsing directory /system/etc/init...
+[   60.901028][    T1] init: Parsing file /system/etc/init/aconfigd.rc...
+[   60.913701][    T1] init: Parsing file /system/etc/init/android.system.suspend-service.rc...
+[   60.919546][    T1] init: Parsing file /system/etc/init/apexd.rc...
+[   60.926260][    T1] init: Parsing file /system/etc/init/atrace.rc...
+[   60.970676][    T1] init: Parsing file /system/etc/init/audioserver.rc...
+[   60.990306][    T1] init: Parsing file /system/etc/init/blank_screen.rc...
+[   60.994960][    T1] init: Parsing file /system/etc/init/bootanim.rc...
+[   61.000318][    T1] init: Parsing file /system/etc/init/bootstat.rc...
+[   61.011478][    T1] init: Parsing file /system/etc/init/cameraserver.rc...
+[   61.024179][    T1] init: Parsing file /system/etc/init/cppreopts.rc...
+[   61.031763][    T1] init: Parsing file /system/etc/init/credstore.rc...
+[   61.036402][    T1] init: Parsing file /system/etc/init/dmesgd.rc...
+[   61.042522][    T1] init: Parsing file /system/etc/init/drmserver_dynamic.rc...
+[   61.045972][    T1] init: Added '/system/etc/init/hw/drmserver.zygote64.rc' to import list
+[   61.049901][    T1] init: Parsing file /system/etc/init/hw/drmserver.zygote64.rc...
+[   61.053996][    T1] init: Parsing file /system/etc/init/dumpstate.rc...
+[   61.058971][    T1] init: No user specified for service 'miuibmdump', so it is root.
+[   61.061842][    T1] init: Parsing file /system/etc/init/flags_health_check.rc...
+[   61.066531][    T1] init: Parsing file /system/etc/init/gatekeeperd.rc...
+[   61.070547][    T1] init: Parsing file /system/etc/init/gpuservice.rc...
+[   61.073601][    T1] init: Parsing file /system/etc/init/graphicsengine.rc...
+[   61.077406][    T1] init: Parsing file /system/etc/init/gsid.rc...
+[   61.082200][    T1] init: Parsing file /system/etc/init/heapprofd.rc...
+[   61.103436][    T1] init: Parsing file /system/etc/init/idmap2d.rc...
+[   61.111202][    T1] init: Parsing file /system/etc/init/incidentd.rc...
+[   61.119350][    T1] init: Parsing file /system/etc/init/init-mmd-prop.rc...
+[   61.130925][    T1] init: Parsing file /system/etc/init/installd.rc...
+[   61.142746][    T1] init: Parsing file /system/etc/init/kcmdlinectrl.rc...
+[   61.146585][    T1] init: Parsing file /system/etc/init/keystore2.rc...
+[   61.153209][    T1] init: Parsing file /system/etc/init/llkd.rc...
+[   61.163909][    T1] init: Parsing file /system/etc/init/lmkd.rc...
+[   61.177814][    T1] init: Parsing file /system/etc/init/logd.rc...
+[   61.183954][    T1] init: Parsing file /system/etc/init/lpdumpd.rc...
+[   61.188421][    T1] init: Parsing file /system/etc/init/mdnsd.rc...
+[   61.191957][    T1] init: Parsing file /system/etc/init/mediaextractor.rc...
+[   61.195647][    T1] init: Parsing file /system/etc/init/mediametrics.rc...
+[   61.198936][    T1] init: Parsing file /system/etc/init/mediaserver_dynamic_QCOM.rc...
+[   61.202599][    T1] init: Added '/system/etc/init/hw/mediaserver.64bit_true.rc' to import list
+[   61.204671][    T1] init: Parsing file /system/etc/init/hw/mediaserver.64bit_true.rc...
+[   61.208510][    T1] init: Parsing file /system/etc/init/misctrl.rc...
+[   61.213377][    T1] init: Parsing file /system/etc/init/mtectrl.rc...
+[   61.220468][    T1] init: Parsing file /system/etc/init/netbpfload.rc...
+[   61.226675][    T1] init: Parsing file /system/etc/init/netd.rc...
+[   61.231225][    T1] init: Parsing file /system/etc/init/odsign.rc...
+[   61.235093][    T1] init: Parsing file /system/etc/init/otapreopt.rc...
+[   61.239026][    T1] init: Parsing file /system/etc/init/perfetto.rc...
+[   61.252926][    T1] init: Parsing file /system/etc/init/prefetch.rc...
+[   61.256145][    T1] init: Parsing file /system/etc/init/prng_seeder.rc...
+[   61.259061][    T1] init: Parsing file /system/etc/init/recovery-persist.rc...
+[   61.261898][    T1] init: Parsing file /system/etc/init/recovery-refresh.rc...
+[   61.268364][    T1] init: Parsing file /system/etc/init/rss_hwm_reset.rc...
+[   61.271628][    T1] init: Parsing file /system/etc/init/servicemanager.rc...
+[   61.275608][    T1] init: Parsing file /system/etc/init/simpleperf.rc...
+[   61.279152][    T1] init: Parsing file /system/etc/init/snapuserd.rc...
+[   61.282619][    T1] init: Parsing file /system/etc/init/storaged.rc...
+[   61.286101][    T1] init: Parsing file /system/etc/init/surfaceflinger.rc...
+[   61.294665][    T1] init: Parsing file /system/etc/init/tombstoned.rc...
+[   61.300973][    T1] init: Parsing file /system/etc/init/traced_perf.rc...
+[   61.306655][    T1] init: Parsing file /system/etc/init/tradeinmode.rc...
+[   61.309952][    T1] init: Parsing file /system/etc/init/uncrypt.rc...
+[   61.312405][    T1] init: No user specified for service 'cust_data_keeper', so it is root.
+[   61.315409][    T1] init: Parsing file /system/etc/init/update_engine.rc...
+[   61.318684][    T1] init: Parsing file /system/etc/init/update_verifier.rc...
+[   61.322238][    T1] init: Parsing file /system/etc/init/usbd.rc...
+[   61.325166][    T1] init: Parsing file /system/etc/init/vdc.rc...
+[   61.328391][    T1] init: Parsing file /system/etc/init/virtual_camera.hal.rc...
+[   61.332653][    T1] init: Parsing file /system/etc/init/vold.rc...
+[   61.335903][    T1] init: Parsing file /system/etc/init/wifi.rc...
+[   61.346903][    T1] init: Parsing file /system/etc/init/wificond.rc...
+[   61.352738][    T1] init: Parsing directory /system_ext/etc/init...
+[   61.356388][    T1] init: Parsing file /system_ext/etc/init/android.hidl.allocator@1.0-service.rc...
+[   61.366628][    T1] init: Parsing file /system_ext/etc/init/bpf_service.rc...
+[   61.377935][    T1] init: Parsing file /system_ext/etc/init/checknv.rc...
+[   61.381379][    T1] init: Parsing file /system_ext/etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc...
+[   61.385692][    T1] init: Parsing file /system_ext/etc/init/com.qualcomm.qti.sigma_miracast_aidl-service.rc...
+[   61.389681][    T1] init: Parsing file /system_ext/etc/init/dpmd.rc...
+[   61.398570][    T1] init: Parsing file /system_ext/etc/init/f2fs.dfc.native@1.0-service.rc...
+[   61.403566][    T1] init: Parsing file /system_ext/etc/init/gppservice.rc...
+[   61.407346][    T1] init: Parsing file /system_ext/etc/init/hwservicemanager.rc...
+[   61.412554][    T1] init: Parsing file /system_ext/etc/init/hyper_bpfloader.rc...
+[   61.435776][    T1] init: Parsing file /system_ext/etc/init/hypsys_system.rc...
+[   61.457037][    T1] init: Parsing file /system_ext/etc/init/init.hyos_spawner.rc...
+[   61.464246][    T1] init: Parsing file /system_ext/etc/init/init.launch_boost.rc...
+[   61.470318][    T1] init: 'writepid /dev/cpuset/foreground/tasks' is converted into 'task_profiles ProcessCapacityHigh' for service iorapd
+[   61.474719][    T1] init: Parsing file /system_ext/etc/init/init.milletmonitor.rc...
+[   61.482956][    T1] init: Parsing file /system_ext/etc/init/init.misight.rc...
+[   61.493984][    T1] init: Parsing file /system_ext/etc/init/init.miui.cameraopt.rc...
+[   61.520413][    T1] init: Parsing file /system_ext/etc/init/init.miui.cust.rc...
+[   61.527075][    T1] init: Parsing file /system_ext/etc/init/init.miui.dumpaudiobinderInfo.rc...
+[   61.533401][    T1] init: Parsing file /system_ext/etc/init/init.miui.ext.rc...
+[   61.545144][    T1] init: Added '/system_ext/etc/init/init.hyos_spawner.rc' to import list
+[   61.584236][    T1] init: Parsing file /system_ext/etc/init/init.hyos_spawner.rc...
+[   61.591629][    T1] init: /system_ext/etc/init/init.hyos_spawner.rc: 2: ignored duplicate definition of service 'hyos_spawner'
+[   61.597397][    T1] init: Parsing file /system_ext/etc/init/init.nativedebug.rc...
+[   61.608945][    T1] init: Parsing file /system_ext/etc/init/init.offline.log.rc...
+[   61.625880][    T1] init: Parsing file /system_ext/etc/init/init.qseelogd.rc...
+[   61.630563][    T1] init: Parsing file /system_ext/etc/init/init.restore_aconfig_perm.rc...
+[   61.652300][    T1] init: Parsing file /system_ext/etc/init/init.secureboot.rc...
+[   61.658428][    T1] init: Parsing file /system_ext/etc/init/init.xiaomi.cammsger.rc...
+[   61.674255][    T1] init: Parsing file /system_ext/etc/init/memory.fbo.native@1.0-service.rc...
+[   61.681849][    T1] init: Parsing file /system_ext/etc/init/memory.swap.native@1.0-service.rc...
+[   61.686977][    T1] init: Parsing file /system_ext/etc/init/miuibooster.rc...
+[   61.695821][    T1] init: Parsing file /system_ext/etc/init/miupdater.rc...
+[   61.710653][    T1] init: Parsing file /system_ext/etc/init/miuserfs.rc...
+[   61.717807][    T1] init: Parsing file /system_ext/etc/init/native.hang@1.0-service.rc...
+[   61.724837][    T1] init: Parsing file /system_ext/etc/init/perfservice.rc...
+[   61.737905][    T1] init: Parsing file /system_ext/etc/init/qsguard.rc...
+[   61.742061][    T1] init: Parsing file /system_ext/etc/init/qspa_system.rc...
+[   61.746609][    T1] init: Added '/system_ext/etc/qspa/qspa_default.rc' to import list
+[   61.757704][    T1] init: Parsing file /system_ext/etc/qspa/qspa_default.rc...
+[   61.760957][    T1] init: Parsing file /system_ext/etc/init/qspmsvc.rc...
+[   61.766667][    T1] init: Parsing file /system_ext/etc/init/sxrauxd_ext.rc...
+[   61.777503][    T1] init: Parsing file /system_ext/etc/init/tcmd.rc...
+[   61.783680][    T1] init: Parsing file /system_ext/etc/init/usbudev.rc...
+[   61.789835][    T1] init: Parsing file /system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc...
+[   61.800396][    T1] init: Parsing file /system_ext/etc/init/vendor.qti.qccsyshal_aidl-service.rc...
+[   61.816449][    T1] init: Parsing file /system_ext/etc/init/virtual_keyboard.rc...
+[   61.820252][    T1] init: Parsing file /system_ext/etc/init/wfdservice.rc...
+[   61.829298][    T1] init: Parsing directory /vendor/etc/init...
+[   61.837769][    T1] init: Parsing file /vendor/etc/init/android.hardware.audio.service_64.rc...
+[   61.850070][    T1] init: 'writepid /dev/cpuset/foreground/tasks' is converted into 'task_profiles ProcessCapacityHigh' for service vendor.audio-hal
+[   61.854136][    T1] init: Parsing file /vendor/etc/init/android.hardware.biometrics.face@1.0-service.face.rc...
+[   61.865456][    T1] init: Parsing file /vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc...
+[   61.877593][    T1] init: Parsing file /vendor/etc/init/android.hardware.boot-service.qti.rc...
+[   61.882011][    T1] init: Parsing file /vendor/etc/init/android.hardware.camera.provider-V1-external-service.rc...
+[   61.892284][    T1] init: Parsing file /vendor/etc/init/android.hardware.drm-service.clearkey.rc...
+[   61.900418][    T1] init: Parsing file /vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc...
+[   61.904315][    T1] init: Parsing file /vendor/etc/init/android.hardware.gatekeeper-service-qti.rc...
+[   61.909377][    T1] init: Parsing file /vendor/etc/init/android.hardware.health-service.qti.rc...
+[   61.914467][    T1] init: Parsing file /vendor/etc/init/android.hardware.identity-service-qti.rc...
+[   61.927024][    T1] init: Parsing file /vendor/etc/init/android.hardware.ir-service.example.rc...
+[   61.932764][    T1] init: Parsing file /vendor/etc/init/android.hardware.media.c2@1.0-service.rc...
+[   61.936926][    T1] init: Parsing file /vendor/etc/init/android.hardware.power-service.rc...
+[   61.941255][    T1] init: Parsing file /vendor/etc/init/android.hardware.secure_element-service.qti.rc...
+[   61.945904][    T1] init: Parsing file /vendor/etc/init/android.hardware.security.keymint-service-qti.rc...
+[   61.950173][    T1] init: Parsing file /vendor/etc/init/android.hardware.sensors-service-multihal.rc...
+[   61.955163][    T1] init: Parsing file /vendor/etc/init/android.hardware.thermal-service.qti.rc...
+[   61.964190][    T1] init: Parsing file /vendor/etc/init/android.hardware.usb-service.qti.rc...
+[   61.969288][    T1] init: Parsing file /vendor/etc/init/android.hardware.usb.gadget-service.qti.rc...
+[   61.973507][    T1] init: Parsing file /vendor/etc/init/android.hardware.wifi-service.rc...
+[   61.977390][    T1] init: Parsing file /vendor/etc/init/android.hardware.wifi.supplicant-service.rc...
+[   61.982732][    T1] init: No user specified for service 'wpa_supplicant', so it is root.
+[   61.985236][    T1] init: Parsing file /vendor/etc/init/boringssl_self_test.rc...
+[   61.994019][    T1] init: Added '/vendor/etc/boringssl_self_test.zygote64.rc' to import list
+[   62.003355][    T1] init: Parsing file /vendor/etc/boringssl_self_test.zygote64.rc...
+[   62.006964][    T1] init: Parsing file /vendor/etc/init/cas-default.rc...
+[   62.011081][    T1] init: Parsing file /vendor/etc/init/cnd.rc...
+[   62.015321][    T1] init: Parsing file /vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc...
+[   62.020622][    T1] init: Parsing file /vendor/etc/init/dataadpl.rc...
+[   62.024743][    T1] init: Parsing file /vendor/etc/init/dataqti.rc...
+[   62.027603][    T1] init: Parsing file /vendor/etc/init/dcfd.rc...
+[   62.031258][    T1] init: Parsing file /vendor/etc/init/ddr_freq.rc...
+[   62.036241][    T1] init: Parsing file /vendor/etc/init/ddr_training.rc...
+[   62.039032][    T1] init: Parsing file /vendor/etc/init/diagcommd.rc...
+[   62.042542][    T1] init: Parsing file /vendor/etc/init/dlsc.rc...
+[   62.053231][    T1] init: Parsing file /vendor/etc/init/dpmQmiMgr.rc...
+[   62.057170][    T1] init: Parsing file /vendor/etc/init/dumpstate-xiaomi.rc...
+[   62.060871][    T1] init: Parsing file /vendor/etc/init/feature_enabler_client.rc...
+[   62.065097][    T1] init: Parsing file /vendor/etc/init/ffu.rc...
+[   62.069477][    T1] init: Parsing file /vendor/etc/init/hexlpservice.rc...
+[   62.072697][    T1] init: Parsing file /vendor/etc/init/hostapd.android.rc...
+[   62.076036][    T1] init: Parsing file /vendor/etc/init/hypsys_vendor.rc...
+[   62.082750][    T1] init: Parsing file /vendor/etc/init/ims-dataservice-daemon.rc...
+[   62.086801][    T1] init: Parsing file /vendor/etc/init/ims_rtp_daemon.rc...
+[   62.090126][    T1] init: Parsing file /vendor/etc/init/imsdaemon.rc...
+[   62.093652][    T1] init: Parsing file /vendor/etc/init/init.embmssl_server.rc...
+[   62.116524][    T1] init: Parsing file /vendor/etc/init/init.qccvendor.rc...
+[   62.122470][    T1] init: Parsing file /vendor/etc/init/init.qlm-service.rc...
+[   62.127136][    T1] init: Parsing file /vendor/etc/init/init.qti.display_boot.rc...
+[   62.131796][    T1] init: Parsing file /vendor/etc/init/init.qti.fm.rc...
+[   62.136664][    T1] init: Parsing file /vendor/etc/init/init.qti.graphics.rc...
+[   62.145864][    T1] init: Parsing file /vendor/etc/init/init.qti.media.rc...
+[   62.151042][    T1] init: Parsing file /vendor/etc/init/init.qti.qcv.rc...
+[   62.154791][    T1] init: Parsing file /vendor/etc/init/init.time_daemon.rc...
+[   62.158626][    T1] init: /vendor/etc/init/init.time_daemon.rc: 10: ignored duplicate definition of service 'time_daemon'
+[   62.160159][    T1] init: Parsing file /vendor/etc/init/init.vendor.ins.rc...
+[   62.163467][    T1] init: Parsing file /vendor/etc/init/init.vendor.sensors.rc...
+[   62.173463][    T1] init: Parsing file /vendor/etc/init/init.vendor.wlan.rc...
+[   62.176406][    T1] init: Parsing file /vendor/etc/init/init.wallpapercolor.rc...
+[   62.180859][    T1] init: Parsing file /vendor/etc/init/init_fan_service.rc...
+[   62.184417][    T1] init: /vendor/etc/init/init_fan_service.rc: 5: ignored duplicate definition of service 'fan_control_turn_on'
+[   62.187385][    T1] init: /vendor/etc/init/init_fan_service.rc: 11: ignored duplicate definition of service 'fan_control_turn_off'
+[   62.190279][    T1] init: Parsing file /vendor/etc/init/init_thermal-engine-v2.rc...
+[   62.193619][    T1] init: Parsing file /vendor/etc/init/ipacm-diag.rc...
+[   62.198132][    T1] init: Parsing file /vendor/etc/init/ipacm.rc...
+[   62.201816][    T1] init: Parsing file /vendor/etc/init/libxiaomi_qcril.rc...
+[   62.210551][    T1] init: Parsing file /vendor/etc/init/loc-launcher.rc...
+[   62.217816][    T1] init: /vendor/etc/init/loc-launcher.rc: 33: ignored duplicate definition of service 'loc_launcher'
+[   62.222456][    T1] init: Parsing file /vendor/etc/init/memtrack_qti.rc...
+[   62.226341][    T1] init: Parsing file /vendor/etc/init/mi_ic.rc...
+[   62.233449][    T1] init: Parsing file /vendor/etc/init/mi_ric.rc...
+[   62.242254][    T1] init: Parsing file /vendor/etc/init/minetd.rc...
+[   62.246066][    T1] init: Parsing file /vendor/etc/init/nicmd.rc...
+[   62.249935][    T1] init: No user specified for service 'vendor.nicmd', so it is root.
+[   62.253908][    T1] init: Parsing file /vendor/etc/init/ozonotify-1.0-service.rc...
+[   62.257397][    T1] init: Parsing file /vendor/etc/init/port-bridge.rc...
+[   62.260540][    T1] init: Parsing file /vendor/etc/init/poweropt-service.rc...
+[   62.264335][    T1] init: Parsing file /vendor/etc/init/qconfig.rc...
+[   62.270714][    T1] init: Parsing file /vendor/etc/init/qcrilNrd.rc...
+[   62.298477][    T1] init: Parsing file /vendor/etc/init/qdcmss.rc...
+[   62.305466][    T1] init: Parsing file /vendor/etc/init/qesdk-manager.rc...
+[   62.310967][    T1] init: Parsing file /vendor/etc/init/qesdk-secmanager.rc...
+[   62.317310][    T1] init: Parsing file /vendor/etc/init/qguard.rc...
+[   62.322142][    T1] init: Parsing file /vendor/etc/init/qmipriod.debug.rc...
+[   62.326831][    T1] init: Parsing file /vendor/etc/init/qmipriod.rc...
+[   62.333480][    T1] init: Parsing file /vendor/etc/init/qms.rc...
+[   62.342705][    T1] init: Parsing file /vendor/etc/init/qseecomd.rc...
+[   62.349530][    T1] init: Parsing file /vendor/etc/init/qspa_vendor.rc...
+[   62.356499][    T1] init: /vendor/etc/init/qspa_vendor.rc: 4: Could not expand import: property 'ro.boot.vendor.qspa.gpu' doesn't exist while expanding '/vendor/etc/qspa/gpu_${ro.boot.vendor.qspa.gpu}.rc'
+[   62.361649][    T1] init: /vendor/etc/init/qspa_vendor.rc: 5: Could not expand import: property 'ro.boot.vendor.qspa.video' doesn't exist while expanding '/vendor/etc/qspa/video_${ro.boot.vendor.qspa.video}.rc'
+[   62.366959][    T1] init: /vendor/etc/init/qspa_vendor.rc: 6: Could not expand import: property 'ro.boot.vendor.qspa.camera' doesn't exist while expanding '/vendor/etc/qspa/camera_${ro.boot.vendor.qspa.camera}.rc'
+[   62.372240][    T1] init: /vendor/etc/init/qspa_vendor.rc: 7: Could not expand import: property 'ro.boot.vendor.qspa.display' doesn't exist while expanding '/vendor/etc/qspa/display_${ro.boot.vendor.qspa.display}.rc'
+[   62.377194][    T1] init: /vendor/etc/init/qspa_vendor.rc: 8: Could not expand import: property 'ro.boot.vendor.qspa.audio' doesn't exist while expanding '/vendor/etc/qspa/audio_${ro.boot.vendor.qspa.audio}.rc'
+[   62.381436][    T1] init: /vendor/etc/init/qspa_vendor.rc: 9: Could not expand import: property 'ro.boot.vendor.qspa.modem' doesn't exist while expanding '/vendor/etc/qspa/modem_${ro.boot.vendor.qspa.modem}.rc'
+[   62.385762][    T1] init: /vendor/etc/init/qspa_vendor.rc: 10: Could not expand import: property 'ro.boot.vendor.qspa.wlan' doesn't exist while expanding '/vendor/etc/qspa/wlan_${ro.boot.vendor.qspa.wlan}.rc'
+[   62.390105][    T1] init: /vendor/etc/init/qspa_vendor.rc: 11: Could not expand import: property 'ro.boot.vendor.qspa.comp' doesn't exist while expanding '/vendor/etc/qspa/comp_${ro.boot.vendor.qspa.comp}.rc'
+[   62.393600][    T1] init: /vendor/etc/init/qspa_vendor.rc: 12: Could not expand import: property 'ro.boot.vendor.qspa.sensors' doesn't exist while expanding '/vendor/etc/qspa/sensors_${ro.boot.vendor.qspa.sensors}.rc'
+[   62.396124][    T1] init: /vendor/etc/init/qspa_vendor.rc: 13: Could not expand import: property 'ro.boot.vendor.qspa.npu' doesn't exist while expanding '/vendor/etc/qspa/npu_${ro.boot.vendor.qspa.npu}.rc'
+[   62.400139][    T1] init: /vendor/etc/init/qspa_vendor.rc: 14: Could not expand import: property 'ro.boot.vendor.qspa.spss' doesn't exist while expanding '/vendor/etc/qspa/spss_${ro.boot.vendor.qspa.spss}.rc'
+[   62.402805][    T1] init: /vendor/etc/init/qspa_vendor.rc: 15: Could not expand import: property 'ro.boot.vendor.qspa.nav' doesn't exist while expanding '/vendor/etc/qspa/nav_${ro.boot.vendor.qspa.nav}.rc'
+[   62.406193][    T1] init: /vendor/etc/init/qspa_vendor.rc: 16: Could not expand import: property 'ro.boot.vendor.qspa.comp1' doesn't exist while expanding '/vendor/etc/qspa/comp1_${ro.boot.vendor.qspa.comp1}.rc'
+[   62.409744][    T1] init: /vendor/etc/init/qspa_vendor.rc: 17: Could not expand import: property 'ro.boot.vendor.qspa.display1' doesn't exist while expanding '/vendor/etc/qspa/display1_${ro.boot.vendor.qspa.display1}.rc'
+[   62.412967][    T1] init: /vendor/etc/init/qspa_vendor.rc: 18: Could not expand import: property 'ro.boot.vendor.qspa.nsp' doesn't exist while expanding '/vendor/etc/qspa/nsp_${ro.boot.vendor.qspa.nsp}.rc'
+[   62.415756][    T1] init: /vendor/etc/init/qspa_vendor.rc: 19: Could not expand import: property 'ro.boot.vendor.qspa.eva' doesn't exist while expanding '/vendor/etc/qspa/eva_${ro.boot.vendor.qspa.eva}.rc'
+[   62.419757][    T1] init: Parsing file /vendor/etc/init/qttestservice.rc...
+[   62.423951][    T1] init: Parsing file /vendor/etc/init/qwesd.rc...
+[   62.429385][    T1] init: Parsing file /vendor/etc/init/shsusrd.rc...
+[   62.440178][    T1] init: Parsing file /vendor/etc/init/slad.rc...
+[   62.445278][    T1] init: Parsing file /vendor/etc/init/ssgtzd.rc...
+[   62.449957][    T1] init: Parsing file /vendor/etc/init/tlpd.rc...
+[   62.454190][    T1] init: Parsing file /vendor/etc/init/trace.debug-pineapple.rc...
+[   62.458011][    T1] init: Parsing file /vendor/etc/init/trusteduilistener.rc...
+[   62.461574][    T1] init: Parsing file /vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc...
+[   62.465690][    T1] init: Parsing file /vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc...
+[   62.470029][    T1] init: 'writepid /dev/cpuset/foreground/tasks' is converted into 'task_profiles ProcessCapacityHigh' for service vendor-dolby-media-c2-hal-1-0
+[   62.473058][    T1] init: Parsing file /vendor/etc/init/vendor.dpmd.rc...
+[   62.480072][    T1] init: No user specified for service 'vendor.dpmd', so it is root.
+[   62.482880][    T1] init: Parsing file /vendor/etc/init/vendor.mbnota.rc...
+[   62.486454][    T1] init: Parsing file /vendor/etc/init/vendor.qsap.location.rc...
+[   62.490580][    T1] init: Parsing file /vendor/etc/init/vendor.qsap.qapeservice.rc...
+[   62.494056][    T1] init: Parsing file /vendor/etc/init/vendor.qsap.sensors.rc...
+[   62.502103][    T1] init: Parsing file /vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc...
+[   62.505829][    T1] init: Parsing file /vendor/etc/init/vendor.qti.audio-adsprpc-service.rc...
+[   62.513211][    T1] init: Parsing file /vendor/etc/init/vendor.qti.cdsprpc-service.rc...
+[   62.516996][    T1] init: Parsing file /vendor/etc/init/vendor.qti.diag_userdebug.rc...
+[   62.534232][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.alarm-service.rc...
+[   62.538475][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc...
+[   62.542011][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc...
+[   62.546148][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.display.color-service.rc...
+[   62.550553][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.display.composer-service.rc...
+[   62.559365][    T1] init: 'writepid /dev/cpuset/system-background/tasks' is converted into 'task_profiles ServiceCapacityLow' for service vendor.qti.hardware.display.composer
+[   62.563622][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.display.demura-service.rc...
+[   62.569119][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc...
+[   62.572104][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.factory-service.rc...
+[   62.576452][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc...
+[   62.579834][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc...
+[   62.582963][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.lights.service.rc...
+[   62.591282][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.limits-service.rc...
+[   62.595550][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc...
+[   62.601276][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc...
+[   62.605082][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.secureprocessor.rc...
+[   62.608878][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.secureprocessor@1.0.rc...
+[   62.611919][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.sensorscalibrate-service.rc...
+[   62.619577][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.servicetrackeraidl-service.rc...
+[   62.623644][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.soter-service.rc...
+[   62.626983][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.trustedui-aidl-service-qti.rc...
+[   62.630206][    T1] init: Parsing file /vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc...
+[   62.634715][    T1] init: Parsing file /vendor/etc/init/vendor.qti.media.c2@1.0-service.rc...
+[   62.638702][    T1] init: 'writepid /dev/cpuset/foreground/tasks' is converted into 'task_profiles ProcessCapacityHigh' for service vendor-qti-media-c2-hal-1-0
+[   62.641671][    T1] init: Parsing file /vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc...
+[   62.644872][    T1] init: 'writepid /dev/cpuset/foreground/tasks' is converted into 'task_profiles ProcessCapacityHigh' for service vendor-qti-media-c2audio-hal-1-0
+[   62.647317][    T1] init: Parsing file /vendor/etc/init/vendor.qti.memory.pasrmanager-service.rc...
+[   62.651276][    T1] init: Parsing file /vendor/etc/init/vendor.qti.pasrknob@1.0-service.rc...
+[   62.656134][    T1] init: Parsing file /vendor/etc/init/vendor.qti.psiclient@1.0-service.rc...
+[   62.659909][    T1] init: Parsing file /vendor/etc/init/vendor.qti.qspa-service.rc...
+[   62.663548][    T1] init: Parsing file /vendor/etc/init/vendor.qti.qspmhal-service.rc...
+[   62.670627][    T1] init: Parsing file /vendor/etc/init/vendor.qti.rmt_storage.rc...
+[   62.674446][    T1] init: Parsing file /vendor/etc/init/vendor.qti.sla.service@1.0-service.rc...
+[   62.677631][    T1] init: Parsing file /vendor/etc/init/vendor.qti.smp2p.rc...
+[   62.680215][    T1] init: Parsing file /vendor/etc/init/vendor.qti.tftp.rc...
+[   62.685025][    T1] init: Parsing file /vendor/etc/init/vendor.rongcard.eid@1.0-service.rc...
+[   62.689093][    T1] init: Parsing file /vendor/etc/init/vendor.sensors.qti.rc...
+[   62.693158][    T1] init: Parsing file /vendor/etc/init/vendor.sensors.sscrpcd.rc...
+[   62.699997][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.cit.bluetooth-service.rc...
+[   62.704456][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.cit.wifi-service.rc...
+[   62.708955][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.batteryantiaging-service.rc...
+[   62.713103][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.cld_aidl-service.rc...
+[   62.717876][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.displayfeature_aidl-service.rc...
+[   62.726478][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.fbo-service.rc...
+[   62.736203][   T29] kauditd_printk_skb: 15 callbacks suppressed
+[   62.736606][   T29] audit: type=1107 audit(1793856693.736:27): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=persist.mtbf.test pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0'
+[   62.737249][    T1] init: /vendor/etc/init/vendor.xiaomi.hardware.fbo-service.rc: 46: ParseTriggers() failed: unexported property trigger found: persist.mtbf.test
+[   62.746192][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc...
+[   62.775571][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.mimd2-service.rc...
+[   62.781654][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.miperf2-service.rc...
+[   62.785647][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.misys.core-service.rc...
+[   62.789652][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.mitrustedui.rc...
+[   62.793201][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.swap-service.rc...
+[   62.796001][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hardware.videoservice-service.rc...
+[   62.799707][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hidl.minet@1.0-service.rc...
+[   62.803620][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.hidl.miwill@1.0-service.rc...
+[   62.809769][    T1] init: Parsing file /vendor/etc/init/vendor.xiaomi.modem.qms@1.0-service.rc...
+[   62.812610][    T1] init: Parsing file /vendor/etc/init/vmmgr.rc...
+[   62.815989][    T1] init: Parsing file /vendor/etc/init/vndservicemanager.rc...
+[   62.820581][    T1] init: Parsing file /vendor/etc/init/vppservice.rc...
+[   62.824084][    T1] init: Parsing file /vendor/etc/init/wfdvndservice.rc...
+[   62.827179][    T1] init: Parsing file /vendor/etc/init/wlanramdumpcollector.rc...
+[   62.831797][    T1] init: Parsing directory /odm/etc/init...
+[   62.834422][    T1] init: Parsing file /odm/etc/init/android.hardware.contexthub-service.qmi.rc...
+[   62.841459][    T1] init: Parsing file /odm/etc/init/android.hardware.gnss-aidl-service-qti.rc...
+[   62.850139][    T1] init: Parsing file /odm/etc/init/android.hardware.security.keymint3-service.strongbox.nxp.rc...
+[   62.854270][    T1] init: Parsing file /odm/etc/init/android.hardware.weaver-service.nxp.rc...
+[   62.857711][    T1] init: Parsing file /odm/etc/init/init.awinic.rc...
+[   62.859878][    T1] init: Parsing file /odm/etc/init/init.boled.lightsensor.rc...
+[   62.862359][    T1] init: Parsing file /odm/etc/init/init.cirrus.rc...
+[   62.865287][    T1] init: Parsing file /odm/etc/init/init.elliptic.rc...
+[   62.867398][    T1] init: Parsing file /odm/etc/init/init.foursemi.rc...
+[   62.870313][    T1] init: Parsing file /odm/etc/init/init.mfp-daemon.aidl.rc...
+[   62.879942][    T1] init: Parsing file /odm/etc/init/init.sia91xx.rc...
+[   62.882826][    T1] init: Parsing file /odm/etc/init/miface.rc...
+[   62.886216][    T1] init: Parsing file /odm/etc/init/misensor_camera.rc...
+[   62.890138][    T1] init: Parsing file /odm/etc/init/mrm.rc...
+[   62.893446][    T1] init: Parsing file /odm/etc/init/nfc-service-nxp.rc...
+[   62.896773][    T1] init: Parsing file /odm/etc/init/vendor.qti.camera.provider-service_64.rc...
+[   62.909313][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.aidl.mtdservice-service.rc...
+[   62.914077][    T1] init: No user specified for service 'vendor.mtdservice', so it is root.
+[   62.915863][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.aidl.tidaservice-service.rc...
+[   62.919820][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.dtool1.rc...
+[   62.923303][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.mfidoca-service.rc...
+[   62.926494][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.mikeybag.rc...
+[   62.929873][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.mlipay-service.rc...
+[   62.933278][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.otrpagent@2.0-service.rc...
+[   62.936805][    T1] init: No user specified for service 'vendor.otrpagent', so it is root.
+[   62.938905][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.seaaudio.rc...
+[   62.942429][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc...
+[   62.953579][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hardware.vsimapp-service.rc...
+[   62.957389][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.hw.touchfeature-service.rc...
+[   62.974051][    T1] init: No user specified for service 'touch-kmsg-init-sh', so it is root.
+[   62.975935][    T1] init: Parsing file /odm/etc/init/vendor.xiaomi.sensor.citsensorservice.aidl.rc...
+[   62.980388][    T1] init: Parsing directory /product/etc/init...
+[   62.983889][    T1] init: Parsing file /product/etc/init/init.miui.ext.rc...
+[   62.990579][    T1] init: Parsing file /product/etc/init/init.qti.display.rc...
+[   62.999823][    T1] init: Parsing file /product/etc/init/vendor.qti.qvirt-service.rc...
+[   63.007760][    T1] init: Parsing file /product/etc/init/vendor.qti.qvirt-service_rs.rc...
+[   63.017182][    T1] init: Parsing directory /mnt/vendor/mi_ext/etc/init...
+[   63.019528][    T1] init: Parsing file /mnt/vendor/mi_ext/etc/init/clinetid_rsa_terr_goo3_1230.rc...
+[   63.023729][    T1] init: Parsing file /mnt/vendor/mi_ext/etc/init/init.miui.google_revenue_share_v4_tier2.rc...
+[   63.029393][    T1] init: Parsing file /mnt/vendor/mi_ext/etc/init/init.miui.mi_ext.rc...
+[   63.060386][    T1] init: processing action (SetupCgroups) from (<Builtin Action>:0)
+[   63.255885][    T1] libprocessgroup: Using system/app isolation under: /sys/fs/cgroup
+[   63.310148][    T1] init: Command 'SetupCgroups' action=SetupCgroups (<Builtin Action>:0) took 243ms and succeeded
+[   63.563149][    T1] init: processing action (SetKptrRestrict) from (<Builtin Action>:0)
+[   63.587405][    T1] init: processing action (TestPerfEventSelinux) from (<Builtin Action>:0)
+[   63.630460][    T1] init: processing action (early-init) from (/system/etc/init/hw/init.rc:15)
+[   63.667079][   T29] audit: type=1400 audit(1793856694.668:28): avc:  denied  { write } for  pid=1 comm="init" name="swappiness" dev="proc" ino=9361 scontext=u:r:init:s0 tcontext=u:object_r:proc:s0 tclass=file permissive=0
+[   63.669188][    T1] init: Command 'write /proc/sys/vm/swappiness 100' action=early-init (/system/etc/init/hw/init.rc:39) took 4ms and failed: Unable to write to file '/proc/sys/vm/swappiness': open() failed: Permission denied
+[   63.739694][    T1] init: Command 'mkdir /dev/memcg/freeze-app 0755 system system' action=early-init (/system/etc/init/hw/init.rc:43) took 55ms and succeeded
+[   63.930611][    T1] init: starting service 'ueventd'...
+[   63.973106][    T1] init: failed write pid 88 to memcg
+[   64.139946][    T1] libprocessgroup: JoinCgroup: controller schedtune is not found
+[   64.307122][    T1] init: ... started service 'ueventd' has pid 88
+[   64.309036][    T1] init: Command 'start ueventd' action=early-init (/system/etc/init/hw/init.rc:95) took 401ms and succeeded
+[   64.326833][   T88] sched_process_exec: filename=/system/bin/ueventd pid=88 old_pid=88
+[   64.384308][    T1] init: starting service 'apexd-bootstrap'...
+[   64.433504][    T1] init: failed write pid 89 to memcg
+[   64.524778][    T1] init: ... started service 'apexd-bootstrap' has pid 89
+[   64.531208][    T1] init: SVC_EXEC service 'apexd-bootstrap' pid 89 (uid 0 gid 1000+0 context default) started; waiting...
+[   64.535530][    T1] init: Command 'exec_start apexd-bootstrap' action=early-init (/system/etc/init/hw/init.rc:103) took 182ms and succeeded
+[   64.586485][   T89] sched_process_exec: filename=/system/bin/apexd pid=89 old_pid=89
+[   64.864011][   T88] ueventd: ueventd started!
+[   65.001797][   T88] selinux: SELinux: Loaded file context from:
+[   65.003085][   T88] selinux: 		/system/etc/selinux/plat_file_contexts
+[   65.004171][   T88] selinux: 		/system_ext/etc/selinux/system_ext_file_contexts
+[   65.006226][   T88] selinux: 		/product/etc/selinux/product_file_contexts
+[   65.007747][   T88] selinux: 		/vendor/etc/selinux/vendor_file_contexts
+[   65.009012][   T88] selinux: 		/odm/etc/selinux/odm_file_contexts
+[   65.021962][   T88] ueventd: Parsing file /system/etc/ueventd.rc...
+[   65.053846][   T88] ueventd: Added '/vendor/etc/ueventd.rc' to import list
+[   65.055844][   T88] ueventd: Added '/odm/etc/ueventd.rc' to import list
+[   65.081618][   T88] ueventd: Parsing file /vendor/etc/ueventd.rc...
+[   65.089944][   T88] ueventd: Added '/vendor/etc/ueventd.qcom.userdebug.rc' to import list
+[   65.093559][   T88] ueventd: /vendor/etc/ueventd.rc: 72: ignoring duplicate subsystem entry
+[   65.133008][   T88] ueventd: /vendor/etc/ueventd.rc: 243: /sys/ lines must have 5 or 6 entries
+[   65.146806][   T88] ueventd: /vendor/etc/ueventd.rc: 430: /sys/ lines must have 5 or 6 entries
+[   65.150129][   T88] ueventd: /vendor/etc/ueventd.rc: 431: /sys/ lines must have 5 or 6 entries
+[   65.155758][   T88] ueventd: /vendor/etc/ueventd.rc: 535: Invalid section keyword found
+[   65.165825][   T88] ueventd: Parsing file /vendor/etc/ueventd.qcom.userdebug.rc...
+[   65.168554][   T88] ueventd: Unable to read config file '/vendor/etc/ueventd.qcom.userdebug.rc': open() failed: No such file or directory
+[   65.178047][   T88] ueventd: Parsing file /odm/etc/ueventd.rc...
+[   65.192892][   T88] ueventd: /odm/etc/ueventd.rc: 68: ignoring duplicate subsystem entry
+[   65.206301][   T88] ueventd: [libfstab] Using Android DT directory /proc/device-tree/firmware/android/
+[   65.887249][   T89] apexd: Started. subcommand = --bootstrap
+[   65.918668][   T89] apexd-bootstrap: Scanning /odm/apex for pre-installed ApexFiles
+[   65.921978][   T89] apexd-bootstrap: /odm/apex does not exist. Skipping
+[   65.923584][   T89] apexd-bootstrap: Scanning /vendor/apex for pre-installed ApexFiles
+[   65.933666][   T89] apexd-bootstrap: Found pre-installed APEX /vendor/apex/com.google.android.widevine.nonupdatable.apex
+[   65.936867][   T89] apexd-bootstrap: Scanning /product/apex for pre-installed ApexFiles
+[   65.938846][   T89] apexd-bootstrap: /product/apex does not exist. Skipping
+[   65.940997][   T89] apexd-bootstrap: Scanning /system_ext/apex for pre-installed ApexFiles
+[   65.945295][   T89] apexd-bootstrap: Found pre-installed APEX /system_ext/apex/com.android.compos.apex
+[   65.948015][   T89] apexd-bootstrap: Found pre-installed APEX /system_ext/apex/com.android.vndk.v34.apex
+[   65.950354][   T89] apexd-bootstrap: Scanning /system/apex for pre-installed ApexFiles
+[   65.959873][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.apex.cts.shim.apex
+[   65.962549][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.bt.apex
+[   65.963940][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.crashrecovery.capex
+[   65.966470][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.i18n.apex
+[   65.968785][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.profiling.capex
+[   65.970579][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.runtime.apex
+[   65.974483][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.uprobestats.capex
+[   65.977643][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.android.virt.apex
+[   65.979559][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.adbd_compressed.apex
+[   65.981961][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.adservices_compressed.apex
+[   65.983930][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.appsearch_compressed.apex
+[   65.986016][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.art_compressed.apex
+[   65.987662][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.cellbroadcast_compressed.apex
+[   65.989976][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.configinfrastructure_compressed.apex
+[   65.992722][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.conscrypt_compressed.apex
+[   65.994948][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.devicelock.apex
+[   65.996975][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.extservices_tplus_compressed.apex
+[   65.999630][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.healthfitness_compressed.apex
+[   66.002121][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.ipsec_compressed.apex
+[   66.003958][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.media.swcodec_compressed.apex
+[   66.006559][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.media_compressed.apex
+[   66.008927][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.mediaprovider_compressed.apex
+[   66.010745][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.neuralnetworks_compressed.apex
+[   66.013001][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.ondevicepersonalization_compressed.apex
+[   66.016038][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.os.statsd_compressed.apex
+[   66.018388][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.permission_compressed.apex
+[   66.021008][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.resolv_compressed.apex
+[   66.023166][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.rkpd_compressed.apex
+[   66.024902][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.scheduling_compressed.apex
+[   66.026895][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.sdkext_compressed.apex
+[   66.030622][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.tethering_compressed.apex
+[   66.032983][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.tzdata6.apex
+[   66.034824][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.uwb_compressed.apex
+[   66.037237][   T89] apexd-bootstrap: Found pre-installed APEX /system/apex/com.google.android.wifi_compressed.apex
+[   67.218407][  T103] sched_process_exit: comm=apexd pid=103 prio=120
+[   67.221537][  T105] sched_process_exit: comm=apexd pid=105 prio=120
+[   67.225290][   T92] sched_process_exit: comm=apexd pid=92 prio=120
+[   67.227895][  T106] sched_process_exit: comm=apexd pid=106 prio=120
+[   67.231753][   T97] sched_process_exit: comm=apexd pid=97 prio=120
+[   67.234495][   T96] sched_process_exit: comm=apexd pid=96 prio=120
+[   67.236204][  T102] sched_process_exit: comm=apexd pid=102 prio=120
+[   67.242730][  T100] sched_process_exit: comm=apexd pid=100 prio=120
+[   67.254664][   T90] sched_process_exit: comm=apexd pid=90 prio=120
+[   67.395292][   T91] sched_process_exit: comm=apexd pid=91 prio=120
+[   67.398115][   T99] sched_process_exit: comm=apexd pid=99 prio=120
+[   67.402848][  T104] sched_process_exit: comm=apexd pid=104 prio=120
+[   67.407539][   T93] sched_process_exit: comm=apexd pid=93 prio=120
+[   67.447378][  T109] sched_process_exit: comm=apexd pid=109 prio=120
+[   67.544839][   T94] sched_process_exit: comm=apexd pid=94 prio=120
+[   67.859941][  T101] sched_process_exit: comm=apexd pid=101 prio=120
+[   68.382927][  T108] sched_process_exit: comm=apexd pid=108 prio=120
+[   68.384953][  T111] sched_process_exit: comm=apexd pid=111 prio=120
+[   68.388901][  T112] sched_process_exit: comm=apexd pid=112 prio=120
+[   68.434138][   T95] sched_process_exit: comm=apexd pid=95 prio=120
+[   68.452425][   T98] sched_process_exit: comm=apexd pid=98 prio=120
+[   68.863008][  T113] sched_process_exit: comm=apexd pid=113 prio=120
+[   69.410413][  T114] sched_process_exit: comm=apexd pid=114 prio=120
+[   70.082785][  T115] sched_process_exit: comm=apexd pid=115 prio=120
+[   70.187262][  T110] sched_process_exit: comm=ueventd pid=110 prio=100
+[   70.467014][  T107] sched_process_exit: comm=ueventd pid=107 prio=100
+[   70.475343][  T116] sched_process_exit: comm=apexd pid=116 prio=120
+[   70.480575][  T117] sched_process_exit: comm=apexd pid=117 prio=120
+[   70.505535][  T119] sched_process_exit: comm=apexd pid=119 prio=120
+[   70.509620][  T120] sched_process_exit: comm=apexd pid=120 prio=120
+[   70.513118][  T122] sched_process_exit: comm=apexd pid=122 prio=120
+[   70.516181][  T121] sched_process_exit: comm=apexd pid=121 prio=120
+[   70.520426][  T118] sched_process_exit: comm=apexd pid=118 prio=120
+[   70.526924][  T123] sched_process_exit: comm=apexd pid=123 prio=120
+[   70.546245][  T124] sched_process_exit: comm=apexd pid=124 prio=120
+[   70.555291][  T126] sched_process_exit: comm=apexd pid=126 prio=120
+[   70.569360][  T127] sched_process_exit: comm=apexd pid=127 prio=120
+[   70.574812][  T128] sched_process_exit: comm=apexd pid=128 prio=120
+[   70.598956][  T125] sched_process_exit: comm=apexd pid=125 prio=120
+[   70.629427][   T89] apexd-bootstrap: Found bootstrap APEX /system/apex/com.google.android.tzdata6.apex
+[   70.631085][   T89] apexd-bootstrap: Found bootstrap APEX /system/apex/com.android.virt.apex
+[   70.633559][   T89] apexd-bootstrap: Found bootstrap APEX /system/apex/com.android.runtime.apex
+[   70.635494][   T89] apexd-bootstrap: Found bootstrap APEX /system_ext/apex/com.android.vndk.v34.apex
+[   70.637745][   T89] apexd-bootstrap: Found bootstrap APEX /system/apex/com.android.i18n.apex
+[   70.641953][   T89] apexd-bootstrap: Need to pre-allocate 42 loop devices
+[   70.935288][   T89] apexd-bootstrap: Found 16 idle loopback devices that were pre-allocated by kernel. Allocated 26 more.
+[   71.607083][  T168] apexd-bootstrap: Fallback to buffered I/O for /system/apex/com.android.runtime.apex
+[   71.616068][  T168] loop0: detected capacity change from 0 to 16152
+[   71.631222][  T166] apexd-bootstrap: Fallback to buffered I/O for /system/apex/com.google.android.tzdata6.apex
+[   71.635317][  T166] loop1: detected capacity change from 0 to 1672
+[   71.649696][  T169] apexd-bootstrap: Fallback to buffered I/O for /system/apex/com.android.virt.apex
+[   71.653802][  T169] loop2: detected capacity change from 0 to 178904
+[   71.658405][  T170] apexd-bootstrap: Fallback to buffered I/O for /system_ext/apex/com.android.vndk.v34.apex
+[   71.662667][  T170] loop3: detected capacity change from 0 to 48504
+[   71.666813][  T167] apexd-bootstrap: Fallback to buffered I/O for /system/apex/com.android.i18n.apex
+[   71.675013][  T167] loop4: detected capacity change from 0 to 73744
+[   72.065492][  T168] EXT4-fs (loop0): mounted filesystem without journal. Quota mode: none.
+[   72.069537][  T167] EXT4-fs (loop4): mounted filesystem without journal. Quota mode: none.
+[   72.095359][  T168] apexd-bootstrap: Successfully mounted package /system/apex/com.android.runtime.apex on /apex/com.android.runtime@1 duration=516
+[   72.099451][  T167] apexd-bootstrap: Successfully mounted package /system/apex/com.android.i18n.apex on /apex/com.android.i18n@1 duration=476
+[   72.114013][  T169] EXT4-fs (loop2): mounted filesystem without journal. Quota mode: none.
+[   72.135106][  T169] apexd-bootstrap: Successfully mounted package /system/apex/com.android.virt.apex on /apex/com.android.virt@3 duration=546
+[   72.185688][  T166] EXT4-fs (loop1): mounted filesystem without journal. Quota mode: none.
+[   72.187337][  T166] apexd-bootstrap: Successfully mounted package /system/apex/com.google.android.tzdata6.apex on /apex/com.android.tzdata@360527580 duration=620
+[   72.395581][  T170] EXT4-fs (loop3): mounted filesystem without journal. Quota mode: none.
+[   72.402088][  T170] apexd-bootstrap: Successfully mounted package /system_ext/apex/com.android.vndk.v34.apex on /apex/com.android.vndk.v34@1 duration=828
+[   72.450318][  T169] sched_process_exit: comm=apexd pid=169 prio=120
+[   72.466578][  T168] sched_process_exit: comm=apexd pid=168 prio=120
+[   72.469928][  T166] sched_process_exit: comm=apexd pid=166 prio=120
+[   72.483193][  T170] sched_process_exit: comm=apexd pid=170 prio=120
+[   72.487708][   T89] apexd-bootstrap: Activated 5 packages.
+[   72.499451][  T167] sched_process_exit: comm=apexd pid=167 prio=120
+[   72.827370][   T89] SELinux: SELinux: Loaded file context from:
+[   72.842880][   T89] SELinux: 		/system/etc/selinux/plat_file_contexts
+[   72.853457][   T89] SELinux: 		/system_ext/etc/selinux/system_ext_file_contexts
+[   72.855121][   T89] SELinux: 		/product/etc/selinux/product_file_contexts
+[   72.858627][   T89] SELinux: 		/vendor/etc/selinux/vendor_file_contexts
+[   72.861012][   T89] SELinux: 		/odm/etc/selinux/odm_file_contexts
+[   73.103732][   T89] apexd-bootstrap: OnBootstrap done, duration=7187
+[   73.290936][   T89] sched_process_exit: comm=apexd pid=89 prio=120
+[   73.706866][    T1] init: Service 'apexd-bootstrap' (pid 89) exited with status 0 waiting took 9.233000 seconds
+[   73.709607][    T1] init: Sending signal 9 to service 'apexd-bootstrap' (pid 89) process group...
+[   73.734186][    T1] libprocessgroup: Removed cgroup /sys/fs/cgroup/system/uid_0/pid_89
+[   73.944762][    T1] init: Parsing file /apex/com.android.virt/etc/vfio_handler.rc...
+[   73.954619][    T1] init: Parsing file /apex/com.android.virt/etc/virtualizationservice.rc...
+[   73.966425][    T1] init: Parsing file /apex/com.android.virt/etc/vmnic.rc...
+[   74.147321][  T176] sched_process_exec: filename=/apex/com.android.runtime/bin/linkerconfig pid=176 old_pid=176
+[   74.874999][   T29] audit: type=1400 audit(1793856705.876:29): avc:  denied  { read } for  pid=176 comm="linkerconfig" name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=502 scontext=u:r:linkerconfig:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+[   74.892121][    T1] linkerconfig: libc: Access denied finding property "persist.vendor.track.malloc.enable"
+[   74.897418][   T29] audit: type=1400 audit(1793856705.900:30): avc:  denied  { read } for  pid=176 comm="linkerconfig" name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=502 scontext=u:r:linkerconfig:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+[   74.903655][    T1] linkerconfig: libc: Access denied finding property "persist.vendor.fd.monitor.enable"
+[   75.045355][  T176] linkerconfig: Failed to open file /system/etc/vndkcorevariant.libraries.txt: No such file or directory
+[   75.404639][  T176] sched_process_exit: comm=linkerconfig pid=176 prio=120
+[   75.418794][    T1] init: linkerconfig generated /linkerconfig with mounted APEX modules info
+[   75.421810][    T1] init: Command 'perform_apex_config --bootstrap' action=early-init (/system/etc/init/hw/init.rc:104) took 1657ms and succeeded
+[   75.439217][   T88] ueventd: Coldboot took 10.197 seconds
+[   75.442321][  T177] sched_process_exit: comm=init pid=177 prio=100
+[   75.507712][    T1] init: processing action (early-init) from (/init.environ.rc:2)
+[   75.515720][    T1] init: processing action (early-init) from (/vendor/etc/init/hw/init.qcom.rc:68)
+[   75.534644][    T1] init: Command 'mount tracefs tracefs /sys/kernel/tracing' action=early-init (/vendor/etc/init/hw/init.qcom.rc:69) took 17ms and failed: mount() failed: Device or resource busy
+[   75.642623][    T1] init: Command 'symlink /vendor/firmware_mnt /firmware' action=early-init (/vendor/etc/init/hw/init.qcom.rc:73) took 95ms and failed: symlink() failed: Read-only file system
+[   75.653249][    T1] init: Command 'symlink /vendor/bt_firmware /bt_firmware' action=early-init (/vendor/etc/init/hw/init.qcom.rc:74) took 5ms and failed: symlink() failed: Read-only file system
+[   75.754092][    T1] init: starting service 'exec 1 (/vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy)'...
+[   75.787661][    T1] init: failed write pid 178 to memcg
+[   75.838237][    T1] init: ... started service 'exec 1 (/vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy)' has pid 178
+[   75.840507][    T1] init: SVC_EXEC service 'exec 1 (/vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy)' pid 178 (uid 0 gid 0+0 context u:r:vendor_modprobe:s0) started; waiting...
+[   75.845614][    T1] init: Command 'exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy' action=early-init (/vendor/etc/init/hw/init.qcom.rc:92) took 107ms and succeeded
+[   75.886852][  T178] sched_process_exec: filename=/vendor/bin/modprobe pid=178 old_pid=178
+[   76.731533][  T178] sched_process_exit: comm=modprobe pid=178 prio=120
+[   76.735986][    T1] init: Service 'exec 1 (/vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy)' (pid 178) exited with status 1 waiting took 0.945000 seconds
+[   76.739306][    T1] init: Sending signal 9 to service 'exec 1 (/vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy)' (pid 178) process group...
+[   76.749115][    T1] libprocessgroup: Removed cgroup /sys/fs/cgroup/system/uid_0/pid_178
+[   76.754190][    T1] init: processing action (early-init) from (/vendor/etc/init/hw/init.target.rc:69)
+[   76.767402][    T1] init: Command 'write /proc/sys/kernel/printk_devkmsg ratelimited' action=early-init (/vendor/etc/init/hw/init.target.rc:70) took 8ms and failed: Unable to write to file '/proc/sys/kernel/printk_devkmsg': Unable to write file contents: Invalid argument
+[   76.802766][    T1] init: processing action (ro.vendor.qti.load_dlkm.service= && early-init) from (/vendor/etc/init/hw/init.qti.kernel.rc:37)
+[   76.810781][    T1] init: starting service 'gki.modprobe'...
+[   76.850496][    T1] init: failed write pid 179 to memcg
+[   76.927387][    T1] init: ... started service 'gki.modprobe' has pid 179
+[   76.930586][    T1] init: SVC_EXEC service 'gki.modprobe' pid 179 (uid 0 gid 0+1 context u:r:vendor_modprobe:s0) started; waiting...
+[   76.933969][    T1] init: Command 'exec_start gki.modprobe' action=ro.vendor.qti.load_dlkm.service= && early-init (/vendor/etc/init/hw/init.qti.kernel.rc:38) took 127ms and succeeded
+[   76.996217][  T179] sched_process_exec: filename=/vendor/bin/system_dlkm_modprobe.sh pid=179 old_pid=179
+[   77.566361][  T181] sched_process_exec: filename=/vendor/bin/grep pid=181 old_pid=181
+[   77.567797][  T180] sched_process_exec: filename=/vendor/bin/cat pid=180 old_pid=180
+[   78.489369][  T180] sched_process_exit: comm=cat pid=180 prio=120
+[   78.512807][  T181] sched_process_exit: comm=grep pid=181 prio=120
+[   78.578965][  T182] sched_process_exit: comm=system_dlkm_mod pid=182 prio=120
+[   78.590386][  T183] sched_process_exec: filename=/vendor/bin/cut pid=183 old_pid=183
+[   78.913035][  T183] sched_process_exit: comm=cut pid=183 prio=120
+[   78.991539][  T184] sched_process_exit: comm=system_dlkm_mod pid=184 prio=120
+[   79.006865][  T185] sched_process_exec: filename=/vendor/bin/cut pid=185 old_pid=185
+[   79.367184][  T185] sched_process_exit: comm=cut pid=185 prio=120
+[   79.415773][  T186] sched_process_exec: filename=/vendor/bin/modprobe pid=186 old_pid=186
+[   79.828525][  T186] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/arch/arm64/geniezone/gzvm.ko with args ''
+[   79.850752][  T187] sched_process_exit: comm=cryptomgr_probe pid=187 prio=120
+[   79.898109][  T186] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/arch/arm64/geniezone/gzvm.ko
+[   79.919667][  T186] sched_process_exit: comm=modprobe pid=186 prio=120
+[   79.982640][  T188] sched_process_exec: filename=/vendor/bin/modprobe pid=188 old_pid=188
+[   79.990949][  T189] sched_process_exec: filename=/vendor/bin/modprobe pid=189 old_pid=189
+[   80.019844][  T190] sched_process_exec: filename=/vendor/bin/modprobe pid=190 old_pid=190
+[   80.093008][  T191] sched_process_exec: filename=/vendor/bin/modprobe pid=191 old_pid=191
+[   80.128293][  T192] sched_process_exec: filename=/vendor/bin/modprobe pid=192 old_pid=192
+[   80.198216][  T193] sched_process_exec: filename=/vendor/bin/modprobe pid=193 old_pid=193
+[   80.223393][  T194] sched_process_exec: filename=/vendor/bin/modprobe pid=194 old_pid=194
+[   80.279841][  T195] sched_process_exec: filename=/vendor/bin/modprobe pid=195 old_pid=195
+[   80.363538][  T196] sched_process_exec: filename=/vendor/bin/modprobe pid=196 old_pid=196
+[   80.421359][  T197] sched_process_exec: filename=/vendor/bin/modprobe pid=197 old_pid=197
+[   80.486503][  T198] sched_process_exec: filename=/vendor/bin/modprobe pid=198 old_pid=198
+[   80.537481][  T199] sched_process_exec: filename=/vendor/bin/modprobe pid=199 old_pid=199
+[   80.620370][  T200] sched_process_exec: filename=/vendor/bin/modprobe pid=200 old_pid=200
+[   80.665605][  T201] sched_process_exec: filename=/vendor/bin/modprobe pid=201 old_pid=201
+[   80.737639][  T202] sched_process_exec: filename=/vendor/bin/modprobe pid=202 old_pid=202
+[   80.834074][  T203] sched_process_exec: filename=/vendor/bin/modprobe pid=203 old_pid=203
+[   80.981875][  T204] sched_process_exec: filename=/vendor/bin/modprobe pid=204 old_pid=204
+[   81.189240][  T205] sched_process_exec: filename=/vendor/bin/modprobe pid=205 old_pid=205
+[   81.243931][  T206] sched_process_exec: filename=/vendor/bin/modprobe pid=206 old_pid=206
+[   81.474637][  T207] sched_process_exec: filename=/vendor/bin/modprobe pid=207 old_pid=207
+[   81.666213][  T208] sched_process_exec: filename=/vendor/bin/modprobe pid=208 old_pid=208
+[   81.869370][  T209] sched_process_exec: filename=/vendor/bin/modprobe pid=209 old_pid=209
+[   82.152757][  T210] sched_process_exec: filename=/vendor/bin/modprobe pid=210 old_pid=210
+[   82.420460][  T211] sched_process_exec: filename=/vendor/bin/modprobe pid=211 old_pid=211
+[   82.636659][  T212] sched_process_exec: filename=/vendor/bin/modprobe pid=212 old_pid=212
+[   82.891081][  T213] sched_process_exec: filename=/vendor/bin/modprobe pid=213 old_pid=213
+[   83.233966][  T214] sched_process_exec: filename=/vendor/bin/modprobe pid=214 old_pid=214
+[   83.469029][  T215] sched_process_exec: filename=/vendor/bin/modprobe pid=215 old_pid=215
+[   83.720037][  T216] sched_process_exec: filename=/vendor/bin/modprobe pid=216 old_pid=216
+[   83.981020][  T217] sched_process_exec: filename=/vendor/bin/modprobe pid=217 old_pid=217
+[   84.059365][  T188] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/kernel/kheaders.ko with args ''
+[   84.122614][  T190] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/lib/crypto/libarc4.ko with args ''
+[   84.275100][  T189] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/mm/zsmalloc.ko with args ''
+[   84.362564][  T218] sched_process_exec: filename=/vendor/bin/modprobe pid=218 old_pid=218
+[   84.449288][  T190] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/lib/crypto/libarc4.ko
+[   84.647233][  T192] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   84.703626][  T219] sched_process_exec: filename=/vendor/bin/modprobe pid=219 old_pid=219
+[   84.851601][  T189] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/mm/zsmalloc.ko
+[   84.884343][  T193] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/dev/can-dev.ko with args ''
+[   85.023288][  T191] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/mm/zsmalloc.ko with args ''
+[   85.109603][  T220] sched_process_exec: filename=/vendor/bin/modprobe pid=220 old_pid=220
+[   85.119302][  T190] sched_process_exit: comm=modprobe pid=190 prio=120
+[   85.233972][  T192] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko
+[   85.306160][  T191] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/block/zram/zram.ko with args ''
+[   85.362808][  T193] CAN device driver interface
+[   85.475899][  T193] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/dev/can-dev.ko
+[   85.503401][  T189] sched_process_exit: comm=modprobe pid=189 prio=120
+[   85.545388][  T194] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/dev/can-dev.ko with args ''
+[   85.611591][  T221] sched_process_exec: filename=/vendor/bin/modprobe pid=221 old_pid=221
+[   85.730732][  T194] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/vcan.ko with args ''
+[   85.773933][  T192] sched_process_exit: comm=modprobe pid=192 prio=120
+[   85.902598][  T222] sched_process_exec: filename=/vendor/bin/modprobe pid=222 old_pid=222
+[   86.027797][  T193] sched_process_exit: comm=modprobe pid=193 prio=120
+[   86.035277][  T195] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/dev/can-dev.ko with args ''
+[   86.075180][  T191] zram: Added device: zram0
+[   86.116442][  T196] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   86.138856][  T191] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/block/zram/zram.ko
+[   86.167839][  T223] sched_process_exec: filename=/vendor/bin/modprobe pid=223 old_pid=223
+[   86.191272][  T194] vcan: Virtual CAN interface driver
+[   86.264530][  T194] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/vcan.ko
+[   86.454197][  T195] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/slcan/slcan.ko with args ''
+[   86.514479][  T196] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko
+[   86.532348][  T198] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   86.606282][  T196] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko with args ''
+[   86.746699][  T224] sched_process_exec: filename=/vendor/bin/modprobe pid=224 old_pid=224
+[   86.754418][  T191] sched_process_exit: comm=modprobe pid=191 prio=120
+[   86.783971][  T199] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   86.891874][  T194] sched_process_exit: comm=modprobe pid=194 prio=120
+[   86.896946][  T198] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko with args ''
+[   86.913507][  T195] slcan: serial line CAN interface driver
+[   86.966658][  T195] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/can/slcan/slcan.ko
+[   86.981256][  T197] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   87.135111][  T199] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko with args ''
+[   87.184638][  T226] sched_process_exec: filename=/vendor/bin/modprobe pid=226 old_pid=226
+[   87.215234][  T197] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko with args ''
+[   87.284597][  T196] PPP generic driver version 2.4.2
+[   87.347931][  T200] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   87.378729][  T198] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_deflate.ko with args ''
+[   87.386271][  T196] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko
+[   87.510608][  T199] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/lib/crypto/libarc4.ko with args ''
+[   87.540160][  T198] PPP Deflate Compression module registered
+[   87.549704][  T197] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/bsd_comp.ko with args ''
+[   87.600423][  T227] sched_process_exec: filename=/vendor/bin/modprobe pid=227 old_pid=227
+[   87.608387][  T195] sched_process_exit: comm=modprobe pid=195 prio=120
+[   87.632903][  T198] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_deflate.ko
+[   87.649931][  T200] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko with args ''
+[   87.671171][  T199] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_mppe.ko with args ''
+[   87.834615][  T197] PPP BSD Compression module registered
+[   87.894761][  T197] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/bsd_comp.ko
+[   87.933113][  T199] PPP MPPE Compression module registered
+[   87.969735][  T200] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/pppox.ko with args ''
+[   87.970355][  T196] sched_process_exit: comm=modprobe pid=196 prio=120
+[   87.978307][  T228] sched_process_exec: filename=/vendor/bin/modprobe pid=228 old_pid=228
+[   87.987924][  T202] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   88.008345][  T201] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   88.031319][  T199] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_mppe.ko
+[   88.118039][  T198] sched_process_exit: comm=modprobe pid=198 prio=120
+[   88.132143][  T203] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/wwan/wwan.ko with args ''
+[   88.252029][  T201] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko with args ''
+[   88.443162][  T199] sched_process_exit: comm=modprobe pid=199 prio=120
+[   88.477550][  T229] sched_process_exec: filename=/vendor/bin/modprobe pid=229 old_pid=229
+[   88.502475][  T197] sched_process_exit: comm=modprobe pid=197 prio=120
+[   88.544948][  T202] sched_process_exit: comm=modprobe pid=202 prio=120
+[   88.608505][  T200] NET: Registered PF_PPPOX protocol family
+[   88.618753][  T200] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/pppox.ko
+[   88.635986][  T204] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/rtl8150.ko with args ''
+[   88.685995][  T201] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/pppox.ko with args ''
+[   88.726840][  T230] sched_process_exec: filename=/vendor/bin/modprobe pid=230 old_pid=230
+[   88.769106][  T203] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/wwan/wwan.ko
+[   88.913500][  T231] sched_process_exec: filename=/vendor/bin/modprobe pid=231 old_pid=231
+[   89.000352][  T200] sched_process_exit: comm=modprobe pid=200 prio=120
+[   89.258528][  T201] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/pptp.ko with args ''
+[   89.264904][  T188] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/kernel/kheaders.ko
+[   89.272720][  T203] sched_process_exit: comm=modprobe pid=203 prio=120
+[   89.308666][  T232] sched_process_exec: filename=/vendor/bin/modprobe pid=232 old_pid=232
+[   89.320051][  T204] usbcore: registered new interface driver rtl8150
+[   89.336393][  T204] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/rtl8150.ko
+[   89.483330][  T206] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   89.488396][  T205] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   89.531262][  T201] PPTP driver version 0.8.5
+[   89.589766][  T233] sched_process_exec: filename=/vendor/bin/modprobe pid=233 old_pid=233
+[   89.607408][  T207] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   89.678459][  T205] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/r8152.ko with args ''
+[   89.701393][  T201] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/pptp.ko
+[   89.714821][  T188] sched_process_exit: comm=modprobe pid=188 prio=120
+[   89.752442][  T206] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   89.815188][  T204] sched_process_exit: comm=modprobe pid=204 prio=120
+[   89.901518][  T207] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   89.911409][  T234] sched_process_exec: filename=/vendor/bin/modprobe pid=234 old_pid=234
+[   90.083451][  T235] sched_process_exec: filename=/vendor/bin/modprobe pid=235 old_pid=235
+[   90.215453][  T209] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   90.250482][  T201] sched_process_exit: comm=modprobe pid=201 prio=120
+[   90.285556][  T206] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko
+[   90.291713][  T207] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/ax88179_178a.ko with args ''
+[   90.361793][  T206] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/asix.ko with args ''
+[   90.409470][  T205] usbcore: registered new device driver r8152-cfgselector
+[   90.411470][  T205] usbcore: registered new interface driver r8152
+[   90.443105][  T236] sched_process_exec: filename=/vendor/bin/modprobe pid=236 old_pid=236
+[   90.496249][  T208] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   90.514202][  T205] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/r8152.ko
+[   90.573001][  T209] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   90.689705][  T207] usbcore: registered new interface driver ax88179_178a
+[   90.783564][  T207] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/ax88179_178a.ko
+[   90.798477][  T208] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   90.806875][  T209] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_eem.ko with args ''
+[   90.826828][  T237] sched_process_exec: filename=/vendor/bin/modprobe pid=237 old_pid=237
+[   90.873022][  T210] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   90.874768][  T206] usbcore: registered new interface driver asix
+[   90.955369][  T206] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/asix.ko
+[   91.085698][  T210] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   91.099724][  T205] sched_process_exit: comm=modprobe pid=205 prio=120
+[   91.137774][  T208] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_ether.ko with args ''
+[   91.174146][  T211] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   91.211143][  T209] usbcore: registered new interface driver cdc_eem
+[   91.248898][  T238] sched_process_exec: filename=/vendor/bin/modprobe pid=238 old_pid=238
+[   91.278679][  T209] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_eem.ko
+[   91.283375][  T214] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/usb/class/cdc-acm.ko with args ''
+[   91.334877][  T207] sched_process_exit: comm=modprobe pid=207 prio=120
+[   91.462326][  T212] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   91.478871][  T211] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   91.539212][  T208] usbcore: registered new interface driver cdc_ether
+[   91.572539][  T206] sched_process_exit: comm=modprobe pid=206 prio=120
+[   91.634557][  T239] sched_process_exec: filename=/vendor/bin/modprobe pid=239 old_pid=239
+[   91.702413][  T208] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_ether.ko
+[   91.707928][  T212] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   91.752423][  T214] usbcore: registered new interface driver cdc_acm
+[   91.790437][  T211] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_ether.ko with args ''
+[   91.815427][  T209] sched_process_exit: comm=modprobe pid=209 prio=120
+[   91.832739][  T214] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[   91.853342][  T214] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/usb/class/cdc-acm.ko
+[   91.865704][  T210] sched_process_exit: comm=modprobe pid=210 prio=120
+[   91.887549][  T240] sched_process_exec: filename=/vendor/bin/modprobe pid=240 old_pid=240
+[   91.973581][  T212] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/aqc111.ko with args ''
+[   91.987654][  T211] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_ncm.ko with args ''
+[   92.058633][  T213] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/mii.ko with args ''
+[   92.146171][  T208] sched_process_exit: comm=modprobe pid=208 prio=120
+[   92.350909][  T241] sched_process_exec: filename=/vendor/bin/modprobe pid=241 old_pid=241
+[   92.506777][  T214] sched_process_exit: comm=modprobe pid=214 prio=120
+[   92.516016][  T213] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/usbnet.ko with args ''
+[   92.592410][  T211] usbcore: registered new interface driver cdc_ncm
+[   92.634583][  T211] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_ncm.ko
+[   92.640454][  T212] usbcore: registered new interface driver aqc111
+[   92.716996][  T212] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/aqc111.ko
+[   92.724795][  T215] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/usb/serial/usbserial.ko with args ''
+[   92.883086][  T242] sched_process_exec: filename=/vendor/bin/modprobe pid=242 old_pid=242
+[   92.906413][  T213] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/cdc_ether.ko with args ''
+[   92.982713][  T216] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/usb/serial/usbserial.ko with args ''
+[   93.267303][  T213] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/r8152.ko with args ''
+[   93.309560][  T243] sched_process_exec: filename=/vendor/bin/modprobe pid=243 old_pid=243
+[   93.314837][  T211] sched_process_exit: comm=modprobe pid=211 prio=120
+[   93.374945][  T212] sched_process_exit: comm=modprobe pid=212 prio=120
+[   93.414910][  T216] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/usb/serial/ftdi_sio.ko with args ''
+[   93.445132][  T215] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/usb/serial/usbserial.ko
+[   93.581326][  T217] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   93.636236][  T244] sched_process_exec: filename=/vendor/bin/modprobe pid=244 old_pid=244
+[   93.720958][  T218] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   93.753164][  T213] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/r8153_ecm.ko with args ''
+[   93.967216][  T245] sched_process_exec: filename=/vendor/bin/modprobe pid=245 old_pid=245
+[   93.996101][  T215] sched_process_exit: comm=modprobe pid=215 prio=120
+[   94.044754][  T216] usbcore: registered new interface driver ftdi_sio
+[   94.047144][  T216] usbserial: USB Serial support registered for FTDI USB Serial Device
+[   94.148657][  T216] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/usb/serial/ftdi_sio.ko
+[   94.198718][  T218] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko with args ''
+[   94.203482][  T217] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko
+[   94.213003][  T219] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   94.220258][  T213] usbcore: registered new interface driver r8153_ecm
+[   94.326135][  T213] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/usb/r8153_ecm.ko
+[   94.366907][  T217] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko with args ''
+[   94.434975][  T246] sched_process_exec: filename=/vendor/bin/modprobe pid=246 old_pid=246
+[   94.448068][  T219] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko with args ''
+[   94.555346][  T220] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   94.591223][  T221] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/8021q/8021q.ko with args ''
+[   94.707721][  T216] sched_process_exit: comm=modprobe pid=216 prio=120
+[   94.876702][  T213] sched_process_exit: comm=modprobe pid=213 prio=120
+[   94.887565][  T220] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko with args ''
+[   94.912427][  T222] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can.ko with args ''
+[   95.090991][  T221] 8021q: 802.1Q VLAN Support v1.8
+[   95.199165][  T221] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/8021q/8021q.ko
+[   95.225903][  T223] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can.ko with args ''
+[   95.290752][  T247] sched_process_exec: filename=/vendor/bin/modprobe pid=247 old_pid=247
+[   95.357440][  T222] can: controller area network core
+[   95.623823][  T221] sched_process_exit: comm=modprobe pid=221 prio=120
+[   95.650418][  T222] NET: Registered PF_CAN protocol family
+[   95.711574][  T223] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can-raw.ko with args ''
+[   95.714907][  T222] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can.ko
+[   95.719964][  T226] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can.ko with args ''
+[   95.957689][  T224] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can.ko with args ''
+[   95.959968][  T226] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can-gw.ko with args ''
+[   95.971529][  T223] can: raw protocol
+[   96.045900][  T223] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can-raw.ko
+[   96.111325][  T222] sched_process_exit: comm=modprobe pid=222 prio=120
+[   96.199834][  T227] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   96.333545][  T224] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can-bcm.ko with args ''
+[   96.389919][  T227] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko with args ''
+[   96.408316][  T226] can: netlink gateway - max_hops=1
+[   96.466086][  T223] sched_process_exit: comm=modprobe pid=223 prio=120
+[   96.519115][  T226] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can-gw.ko
+[   96.622056][  T224] can: broadcast manager protocol
+[   96.633211][  T217] Bluetooth: Core ver 2.22
+[   96.665404][  T217] NET: Registered PF_BLUETOOTH protocol family
+[   96.666438][  T217] Bluetooth: HCI device and connection manager initialized
+[   96.684789][  T224] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/can/can-bcm.ko
+[   96.704825][  T217] Bluetooth: HCI socket layer initialized
+[   96.706070][  T217] Bluetooth: L2CAP socket layer initialized
+[   96.707639][  T217] Bluetooth: SCO socket layer initialized
+[   96.872364][  T220] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btqca.ko with args ''
+[   96.874425][  T218] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btsdio.ko with args ''
+[   96.878069][  T219] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btbcm.ko with args ''
+[   96.881732][  T217] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko
+[   96.952129][  T217] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btbcm.ko with args ''
+[   96.957211][  T226] sched_process_exit: comm=modprobe pid=226 prio=120
+[   96.971988][  T228] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   97.016286][  T224] sched_process_exit: comm=modprobe pid=224 prio=120
+[   97.141913][  T219] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btbcm.ko
+[   97.190166][  T220] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btqca.ko
+[   97.218963][  T218] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btsdio.ko
+[   97.224139][  T217] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/btqca.ko with args ''
+[   97.243171][  T230] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/l2tp/l2tp_core.ko with args ''
+[   97.247178][  T228] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko with args ''
+[   97.351852][  T217] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/hci_uart.ko with args ''
+[   97.434175][  T229] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   97.499768][  T219] sched_process_exit: comm=modprobe pid=219 prio=120
+[   97.573565][  T220] sched_process_exit: comm=modprobe pid=220 prio=120
+[   97.641425][  T218] sched_process_exit: comm=modprobe pid=218 prio=120
+[   97.671777][  T229] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/bluetooth.ko with args ''
+[   97.675805][  T233] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/tipc/tipc.ko with args ''
+[   97.782493][  T232] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/tipc/tipc.ko with args ''
+[   97.789650][  T231] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/slip/slhc.ko with args ''
+[   97.894915][  T231] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/ppp_generic.ko with args ''
+[   97.939351][  T227] sched_process_exit: comm=modprobe pid=227 prio=120
+[   97.981277][  T234] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[   97.993993][  T217] Bluetooth: HCI UART driver ver 2.3
+[   97.995332][  T217] Bluetooth: HCI UART protocol H4 registered
+[   98.018936][  T230] l2tp_core: L2TP core driver, V2.0
+[   98.028881][  T217] Bluetooth: HCI UART protocol LL registered
+[   98.031025][  T217] Bluetooth: HCI UART protocol Broadcom registered
+[   98.070195][  T217] Bluetooth: HCI UART protocol QCA registered
+[   98.088131][  T230] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/l2tp/l2tp_core.ko
+[   98.103451][  T235] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   98.134275][  T217] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/bluetooth/hci_uart.ko
+[   98.163331][  T231] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/drivers/net/ppp/pppox.ko with args ''
+[   98.309379][  T228] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/rfcomm/rfcomm.ko with args ''
+[   98.352293][  T234] sched_process_exit: comm=modprobe pid=234 prio=120
+[   98.359109][  T231] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/l2tp/l2tp_core.ko with args ''
+[   98.403408][  T230] sched_process_exit: comm=modprobe pid=230 prio=120
+[   98.436713][  T217] sched_process_exit: comm=modprobe pid=217 prio=120
+[   98.531504][  T236] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   98.554838][  T231] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/l2tp/l2tp_ppp.ko with args ''
+[   98.594077][  T229] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/hidp/hidp.ko with args ''
+[   98.759193][  T236] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_dest.ko with args ''
+[   98.765750][  T235] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko
+[   98.784352][  T237] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   98.829891][  T228] Bluetooth: RFCOMM TTY layer initialized
+[   98.830917][  T228] Bluetooth: RFCOMM socket layer initialized
+[   98.837731][   T29] audit: type=1400 audit(1793856729.840:31): avc:  denied  { net_bind_service } for  pid=248 comm="krfcommd" capability=10  scontext=u:r:kernel:s0 tcontext=u:r:kernel:s0 tclass=capability permissive=0
+[   98.841359][  T248] Bluetooth: Bind failed -13
+[   98.842302][  T231] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[   98.861062][  T229] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[   98.862205][  T229] Bluetooth: HIDP socket layer initialized
+[   98.874174][  T228] Bluetooth: RFCOMM ver 1.11
+[   98.893991][  T237] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_fragment.ko with args ''
+[   98.899875][  T231] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/l2tp/l2tp_ppp.ko
+[   98.914928][  T228] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/rfcomm/rfcomm.ko
+[   98.938520][  T236] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_dest.ko
+[   98.961875][  T229] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/bluetooth/hidp/hidp.ko
+[   98.979313][  T232] tipc: Activated (version 2.0.0)
+[   98.984805][  T238] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   99.084182][  T239] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   99.084212][  T235] sched_process_exit: comm=modprobe pid=235 prio=120
+[   99.117406][  T238] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_hop.ko with args ''
+[   99.127537][  T237] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_fragment.ko
+[   99.160038][  T239] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_ipv6.ko with args ''
+[   99.195894][  T229] sched_process_exit: comm=modprobe pid=229 prio=120
+[   99.198816][  T228] sched_process_exit: comm=modprobe pid=228 prio=120
+[   99.205925][  T236] sched_process_exit: comm=modprobe pid=236 prio=120
+[   99.259664][  T231] sched_process_exit: comm=modprobe pid=231 prio=120
+[   99.262386][  T238] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_hop.ko
+[   99.304963][  T240] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   99.323058][  T232] NET: Registered PF_TIPC protocol family
+[   99.347299][  T239] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_ipv6.ko
+[   99.375829][  T237] sched_process_exit: comm=modprobe pid=237 prio=120
+[   99.431736][  T232] tipc: Started in single node mode
+[   99.444189][  T241] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   99.447270][  T240] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_mobility.ko with args ''
+[   99.487482][  T238] sched_process_exit: comm=modprobe pid=238 prio=120
+[   99.489820][  T242] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   99.502679][  T233] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/tipc/diag.ko with args ''
+[   99.503837][  T232] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/tipc/tipc.ko
+[   99.545782][  T241] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_routing.ko with args ''
+[   99.554994][  T242] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_udp.ko with args ''
+[   99.563179][  T239] sched_process_exit: comm=modprobe pid=239 prio=120
+[   99.606164][  T233] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/tipc/diag.ko
+[   99.609361][  T240] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_mobility.ko
+[   99.650517][  T241] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_routing.ko
+[   99.678165][  T232] sched_process_exit: comm=modprobe pid=232 prio=120
+[   99.701507][  T242] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/nhc_udp.ko
+[   99.747076][  T245] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/ieee802154.ko with args ''
+[   99.760614][  T243] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/6lowpan/6lowpan.ko with args ''
+[   99.762712][  T240] sched_process_exit: comm=modprobe pid=240 prio=120
+[   99.776775][  T241] sched_process_exit: comm=modprobe pid=241 prio=120
+[   99.783720][  T244] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/ieee802154.ko with args ''
+[   99.801687][  T233] sched_process_exit: comm=modprobe pid=233 prio=120
+[   99.812519][  T242] sched_process_exit: comm=modprobe pid=242 prio=120
+[   99.844296][  T243] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/ieee802154.ko with args ''
+[   99.934301][  T245] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/ieee802154_socket.ko with args ''
+[   99.937237][  T243] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/ieee802154.ko
+[   99.939869][  T243] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/6lowpan/ieee802154_6lowpan.ko with args ''
+[   99.973538][  T246] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/ieee802154.ko with args ''
+[  100.024622][  T244] sched_process_exit: comm=modprobe pid=244 prio=120
+[  100.045505][  T243] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/6lowpan/ieee802154_6lowpan.ko
+[  100.051457][  T246] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/mac802154/mac802154.ko with args ''
+[  100.083454][  T247] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/rfkill/rfkill.ko with args ''
+[  100.100230][  T245] NET: Registered PF_IEEE802154 protocol family
+[  100.104463][  T243] sched_process_exit: comm=modprobe pid=243 prio=120
+[  100.107164][  T245] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/ieee802154/ieee802154_socket.ko
+[  100.148759][  T247] modprobe: Loading module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/nfc/nfc.ko with args ''
+[  100.155224][  T246] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/mac802154/mac802154.ko
+[  100.180911][  T246] sched_process_exit: comm=modprobe pid=246 prio=120
+[  100.205476][  T245] sched_process_exit: comm=modprobe pid=245 prio=120
+[  100.234582][  T247] nfc: nfc_init: NFC Core ver 0.1
+[  100.238122][  T247] NET: Registered PF_NFC protocol family
+[  100.245311][  T247] modprobe: Loaded kernel module /system_dlkm/lib/modules/6.1.138-android14-11-g0c3d559bcd85-ab14529422/kernel/net/nfc/nfc.ko
+[  100.278176][  T247] sched_process_exit: comm=modprobe pid=247 prio=120
+[  100.303896][  T179] sched_process_exit: comm=system_dlkm_mod pid=179 prio=120
+[  100.308823][    T1] init: Service 'gki.modprobe' (pid 179) exited with status 0 waiting took 23.455000 seconds
+[  100.310714][    T1] init: Sending signal 9 to service 'gki.modprobe' (pid 179) process group...
+[  100.320351][    T1] libprocessgroup: Removed cgroup /sys/fs/cgroup/system/uid_0/pid_179
+[  100.362871][    T1] init: starting service 'vendor.modprobe'...
+[  100.400190][    T1] init: failed write pid 249 to memcg
+[  100.498023][    T1] init: ... started service 'vendor.modprobe' has pid 249
+[  100.500208][    T1] init: Command 'start vendor.modprobe' action=ro.vendor.qti.load_dlkm.service= && early-init (/vendor/etc/init/hw/init.qti.kernel.rc:39) took 168ms and succeeded
+[  100.514660][    T1] init: processing action (early-init) from (/vendor/etc/init/hw/init.qti.kernel.rc:41)
+[  100.532560][    T1] init: Command 'mount tracefs tracefs /sys/kernel/tracing' action=early-init (/vendor/etc/init/hw/init.qti.kernel.rc:48) took 5ms and failed: mount() failed: Device or resource busy
+[  100.549250][  T249] sched_process_exec: filename=/vendor/bin/vendor_modprobe.sh pid=249 old_pid=249
+[  100.574439][    T1] init: processing action (early-init) from (/system/etc/init/prng_seeder.rc:5)
+[  100.597221][    T1] init: starting service 'prng_seeder'...
+[  100.626539][    T1] init: Created socket '/dev/socket/prng_seeder', mode 666, user 1092, group 1092
+[  100.696453][    T1] init: failed write pid 250 to memcg
+[  100.826344][    T1] init: ... started service 'prng_seeder' has pid 250
+[  100.837673][    T1] init: Command 'start prng_seeder' action=early-init (/system/etc/init/prng_seeder.rc:6) took 250ms and succeeded
+[  100.841881][    T1] init: processing action (early-init) from (/system_ext/etc/init/init.miui.cust.rc:1)
+[  100.865138][    T1] init: Command 'mkdir /cust 0775 system system' action=early-init (/system_ext/etc/init/init.miui.cust.rc:2) took 19ms and failed: lchown failed on /cust: Read-only file system
+[  100.887255][    T1] init: processing action (ro.product.cpu.abilist64=* && early-init) from (/vendor/etc/boringssl_self_test.zygote64.rc:1)
+[  100.938838][  T251] sched_process_exec: filename=/vendor/bin/getprop pid=251 old_pid=251
+[  100.943515][  T250] sched_process_exec: filename=/system/bin/prng_seeder pid=250 old_pid=250
+[  100.951039][    T1] init: starting service 'boringssl_self_test64_vendor'...
+[  101.094502][    T1] init: failed write pid 252 to memcg
+[  101.231182][    T1] init: ... started service 'boringssl_self_test64_vendor' has pid 252
+[  101.242992][    T1] init: SVC_EXEC service 'boringssl_self_test64_vendor' pid 252 (uid 0 gid 0+0 context default) started; waiting...
+[  101.255077][    T1] init: Command 'exec_start boringssl_self_test64_vendor' action=ro.product.cpu.abilist64=* && early-init (/vendor/etc/boringssl_self_test.zygote64.rc:2) took 356ms and succeeded
+[  101.304999][  T252] sched_process_exec: filename=/vendor/bin/boringssl_self_test64 pid=252 old_pid=252
+[  101.455774][  T251] sched_process_exit: comm=getprop pid=251 prio=120
+[  101.631276][  T253] sched_process_exec: filename=/vendor/bin/sed pid=253 old_pid=253
+[  101.659480][  T254] sched_process_exec: filename=/vendor/bin/sed pid=254 old_pid=254
+[  102.908769][  T252] sched_process_exit: comm=boringssl_self_ pid=252 prio=120
+[  102.914859][    T1] init: Service 'boringssl_self_test64_vendor' (pid 252) exited with status 0 waiting took 1.817000 seconds
+[  102.917797][    T1] init: Sending signal 9 to service 'boringssl_self_test64_vendor' (pid 252) process group...
+[  102.932930][  T253] sched_process_exit: comm=sed pid=253 prio=120
+[  102.942941][    T1] libprocessgroup: Removed cgroup /sys/fs/cgroup/system/uid_0/pid_252
+[  102.962942][    T1] init: processing action (early-init) from (/vendor/etc/init/init.qti.graphics.rc:16)
+[  102.975883][  T254] sched_process_exit: comm=sed pid=254 prio=120
+[  102.979056][    T1] init: starting service 'vendor_qti_graphics_boot'...
+[  103.040610][    T1] init: failed write pid 256 to memcg
+[  103.092932][  T255] sched_process_exec: filename=/vendor/bin/sed pid=255 old_pid=255
+[  103.097009][  T257] sched_process_exec: filename=/vendor/bin/sed pid=257 old_pid=257
+[  103.193396][    T1] init: ... started service 'vendor_qti_graphics_boot' has pid 256
+[  103.195319][    T1] init: Command 'start vendor_qti_graphics_boot' action=early-init (/vendor/etc/init/init.qti.graphics.rc:17) took 229ms and succeeded
+[  103.200361][    T1] init: processing action (early-init) from (/vendor/etc/init/init.qti.media.rc:42)
+[  103.223367][    T1] init: processing action (early-init) from (/vendor/etc/init/init.qti.qcv.rc:8)
+[  103.275470][  T258] sched_process_exec: filename=/vendor/bin/sort pid=258 old_pid=258
+[  103.282544][    T1] init: starting service 'exec 2 (/vendor/bin/init.qti.qcv.sh)'...
+[  103.302773][  T260] sched_process_exec: filename=/vendor/bin/cut pid=260 old_pid=260
+[  103.418717][  T256] sched_process_exec: filename=/vendor/bin/init.qti.graphics.sh pid=256 old_pid=256
+[  103.420044][  T259] sched_process_exec: filename=/vendor/bin/sort pid=259 old_pid=259
+[  103.552665][  T261] sched_process_exec: filename=/vendor/bin/grep pid=261 old_pid=261
+[  103.562312][    T1] init: failed write pid 263 to memcg
+[  103.587853][  T262] sched_process_exec: filename=/vendor/bin/grep pid=262 old_pid=262
+[  103.757740][    T1] init: ... started service 'exec 2 (/vendor/bin/init.qti.qcv.sh)' has pid 263
+[  103.782879][    T1] init: SVC_EXEC service 'exec 2 (/vendor/bin/init.qti.qcv.sh)' pid 263 (uid 0 gid 0+0 context u:r:vendor_qti_init_shell:s0) started; waiting...
+[  103.802296][    T1] init: Command 'exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qti.qcv.sh' action=early-init (/vendor/etc/init/init.qti.qcv.rc:10) took 548ms and succeeded
+[  103.931779][  T263] sched_process_exec: filename=/vendor/bin/init.qti.qcv.sh pid=263 old_pid=263
+[  104.976508][  T264] sched_process_exec: filename=/vendor/bin/getprop pid=264 old_pid=264
+[  105.319807][  T255] sched_process_exit: comm=sed pid=255 prio=120
+[  105.388168][  T257] sched_process_exit: comm=sed pid=257 prio=120
+[  105.483951][  T265] sched_process_exec: filename=/vendor/bin/cat pid=265 old_pid=265
+[  105.627171][  T258] sched_process_exit: comm=sort pid=258 prio=120
+[  105.799772][  T259] sched_process_exit: comm=sort pid=259 prio=120
+[  105.818259][  T264] sched_process_exit: comm=getprop pid=264 prio=120
+[  105.850626][  T260] sched_process_exit: comm=cut pid=260 prio=120
+[  105.894902][  T261] sched_process_exit: comm=grep pid=261 prio=120
+[  105.920437][  T266] sched_process_exec: filename=/vendor/bin/setprop pid=266 old_pid=266
+[  106.369458][  T266] sched_process_exit: comm=setprop pid=266 prio=120
+[  106.420314][  T262] sched_process_exit: comm=grep pid=262 prio=120
+[  106.421244][  T256] sched_process_exit: comm=init.qti.graphi pid=256 prio=120
+[  106.427377][    T1] init: Service 'vendor_qti_graphics_boot' (pid 256) exited with status 0 oneshot service took 3.383000 seconds in background
+[  106.437512][    T1] init: Sending signal 9 to service 'vendor_qti_graphics_boot' (pid 256) process group...
+[  106.453949][  T265] sched_process_exit: comm=cat pid=265 prio=120
+[  106.454003][    T1] libprocessgroup: Removed cgroup /sys/fs/cgroup/system/uid_2000/pid_256
+[  106.518813][  T268] sched_process_exec: filename=/vendor/bin/setprop pid=268 old_pid=268
+[  106.536361][  T269] sched_process_exec: filename=/vendor/bin/cut pid=269 old_pid=269
+[  106.541060][  T267] sched_process_exit: comm=vendor_modprobe pid=267 prio=120
+[  106.840261][  T268] sched_process_exit: comm=setprop pid=268 prio=120
+[  106.928170][  T269] sched_process_exit: comm=cut pid=269 prio=120
+[  106.935390][  T263] sched_process_exit: comm=init.qti.qcv.sh pid=263 prio=120
+[  106.941150][    T1] init: Service 'exec 2 (/vendor/bin/init.qti.qcv.sh)' (pid 263) exited with status 0 waiting took 3.376000 seconds
+[  106.943057][    T1] init: Sending signal 9 to service 'exec 2 (/vendor/bin/init.qti.qcv.sh)' (pid 263) process group...
+[  106.955959][    T1] libprocessgroup: Removed cgroup /sys/fs/cgroup/system/uid_0/pid_263
+[  106.965966][    T1] init: Command 'setprop ro.boot.product.vendor.sku ${ro.vendor.qti.soc_name}' action=early-init (/vendor/etc/init/init.qti.qcv.rc:11) took 5ms and failed: property 'ro.vendor.qti.soc_name' doesn't exist while expanding '${ro.vendor.qti.soc_name}'
+[  106.979655][    T1] init: Command 'setprop ro.soc.model ${ro.vendor.qti.soc_model}' action=early-init (/vendor/etc/init/init.qti.qcv.rc:12) took 7ms and failed: property 'ro.vendor.qti.soc_model' doesn't exist while expanding '${ro.vendor.qti.soc_model}'
+[  107.001329][   T86] init: Unable to set property 'ro.odm.build.media_performance_class' from uid:0 gid:0 pid:87: Read-only property was already set
+[  107.005016][  T270] sched_process_exit: comm=vendor_modprobe pid=270 prio=120
+[  107.010751][    T1] init: processing action (early-init) from (/vendor/etc/init/vendor.qti.audio-adsprpc-service.rc:36)
+[  107.021585][    T1] init: starting service 'vendor.audioadsprpcd_audiopd'...
+[  107.027350][  T271] sched_process_exec: filename=/vendor/bin/cut pid=271 old_pid=271
+[  107.089143][    T1] init: failed write pid 272 to memcg
+[  107.221854][    T1] init: ... started service 'vendor.audioadsprpcd_audiopd' has pid 272
+[  107.224236][    T1] init: Command 'start vendor.audioadsprpcd_audiopd' action=early-init (/vendor/etc/init/vendor.qti.audio-adsprpc-service.rc:37) took 209ms and succeeded
+[  107.229323][    T1] init: processing action (early-init) from (/vendor/etc/init/vendor.qti.diag_userdebug.rc:7)
+[  107.256152][    T1] init: processing action (ConnectEarlyStageSnapuserd) from (<Builtin Action>:0)
+[  107.270865][  T272] sched_process_exec: filename=/vendor/bin/audioadsprpcd pid=272 old_pid=272
+[  107.274178][    T1] init: processing action (wait_for_coldboot_done) from (<Builtin Action>:0)
+[  107.277606][    T1] init: start_waiting_for_property("ro.cold_boot_done", "true"): already set
+[  107.285134][    T1] init: processing action (CheckTradeInModeStatus) from (<Builtin Action>:0)
+[  107.288344][    T1] init: processing action (SetMmapRndBits) from (<Builtin Action>:0)
+[  107.318630][    T1] init: processing action (KeychordInit) from (<Builtin Action>:0)
+[  107.339656][    T1] init: EVIOCSMASK not supported: Invalid argument
+[  107.368099][    T1] init: processing action (init) from (/system/etc/init/hw/init.rc:143)
+[  107.439527][  T271] sched_process_exit: comm=cut pid=271 prio=120
+[  107.469487][  T273] sched_process_exec: filename=/vendor/bin/modprobe pid=273 old_pid=273
+[  107.822615][    T1] init: Command 'write /dev/blkio/blkio.weight 1000' action=init (/system/etc/init/hw/init.rc:277) took 6ms and failed: Unable to write to file '/dev/blkio/blkio.weight': open() failed: Permission denied
+[  107.834268][    T1] init: Command 'write /dev/blkio/background/blkio.weight 200' action=init (/system/etc/init/hw/init.rc:278) took 8ms and failed: Unable to write to file '/dev/blkio/background/blkio.weight': open() failed: Permission denied
+[  107.855095][    T1] init: Command 'write /dev/blkio/blkio.group_idle 0' action=init (/system/etc/init/hw/init.rc:280) took 6ms and failed: Unable to write to file '/dev/blkio/blkio.group_idle': open() failed: Permission denied
+[  107.868702][    T1] init: Command 'write /dev/blkio/background/blkio.group_idle 0' action=init (/system/etc/init/hw/init.rc:281) took 7ms and failed: Unable to write to file '/dev/blkio/background/blkio.group_idle': open() failed: Permission denied
+[  107.924228][    T1] selinux: SELinux: Could not set context for /mnt/vendor/mi_ext:  Read-only file system
+[  108.096949][  T273] modprobe: malformed modules.softdep at token mpam_policy
+[  108.115092][  T273] modprobe: Loading module /vendor/lib/modules/msm_sysstats.ko with args ''
+[  108.144918][  T273] msm_sysstats: Unknown symbol qcom_is_dma_buf_file (err -2)
+[  108.162482][  T273] modprobe: Failed to insmod '/vendor/lib/modules/msm_sysstats.ko' with args '': No such file or directory
+[  108.165251][  T273] modprobe: LoadWithAliases was unable to load msm_sysstats.ko
+[  108.166471][  T273] modprobe: Failed to load module msm_sysstats.ko: No such file or directory
+[  108.198880][  T273] sched_process_exit: comm=modprobe pid=273 prio=120
+[  108.263387][  T274] sched_process_exec: filename=/vendor/bin/sed pid=274 old_pid=274
+[  108.293766][  T275] sched_process_exec: filename=/vendor/bin/sed pid=275 old_pid=275
+[  108.963819][    T1] init: Command 'write /dev/cpuset/misf/cpus 4-7' action=init (/system/etc/init/hw/init.rc:438) took 19ms and failed: Unable to write to file '/dev/cpuset/misf/cpus': Unable to write file contents: Math result not representable
+[  109.005378][  T274] sched_process_exit: comm=sed pid=274 prio=120
+[  109.035310][  T275] sched_process_exit: comm=sed pid=275 prio=120
+[  109.138207][  T276] sched_process_exec: filename=/vendor/bin/sed pid=276 old_pid=276
+[  109.165460][  T277] sched_process_exec: filename=/vendor/bin/sed pid=277 old_pid=277
+[  109.183524][  T278] sched_process_exec: filename=/vendor/bin/sort pid=278 old_pid=278
+[  109.251763][  T279] sched_process_exec: filename=/vendor/bin/sort pid=279 old_pid=279
+[  109.298464][    T1] Registered swp emulation handler
+[  109.310601][  T280] sched_process_exec: filename=/vendor/bin/cut pid=280 old_pid=280
+[  109.386761][  T281] sched_process_exec: filename=/vendor/bin/grep pid=281 old_pid=281
+[  109.451369][  T282] sched_process_exec: filename=/vendor/bin/grep pid=282 old_pid=282
+[  109.457443][    T1] init: Command 'write /dev/cpu_variant:${ro.bionic.2nd_arch} ${ro.bionic.2nd_cpu_variant}' action=init (/system/etc/init/hw/init.rc:538) took 0ms and failed: property 'ro.bionic.2nd_arch' doesn't exist while expanding '/dev/cpu_variant:${ro.bionic.2nd_arch}'
+[  109.478288][    T1] init: Command 'chmod 0444 /dev/cpu_variant:${ro.bionic.2nd_arch}' action=init (/system/etc/init/hw/init.rc:539) took 0ms and failed: property 'ro.bionic.2nd_arch' doesn't exist while expanding '/dev/cpu_variant:${ro.bionic.2nd_arch}'
+[  109.563410][    T1] init: starting service 'logd'...
+[  109.595730][    T1] init: Created socket '/dev/socket/logd', mode 666, user 1036, group 1036
+[  109.643447][    T1] init: Created socket '/dev/socket/logdr', mode 666, user 1036, group 1036
+[  109.702281][    T1] init: Created socket '/dev/socket/logdw', mode 222, user 1036, group 1036
+[  109.745646][    T1] init: Could not open file '/dev/ylog_buffer': Failed to open file '/dev/ylog_buffer': No such file or directory
+[  109.933736][    T1] init: failed write pid 283 to memcg
+[  110.255244][    T1] init: ... started service 'logd' has pid 283
+[  110.257224][    T1] init: Command 'start logd' action=init (/system/etc/init/hw/init.rc:552) took 714ms and succeeded
+[  110.274992][    T1] init: starting service 'lmkd'...
+[  110.282452][    T1] init: Created socket '/dev/socket/lmkd', mode 660, user 1000, group 1000
+[  110.406364][    T1] init: failed write pid 284 to memcg
+[  110.746180][    T1] init: ... started service 'lmkd' has pid 284
+[  110.747383][    T1] init: Command 'start lmkd' action=init (/system/etc/init/hw/init.rc:559) took 477ms and succeeded
+[  110.756519][    T1] init: starting service 'servicemanager'...
+[  110.894447][    T1] init: failed write pid 285 to memcg
+[  110.903709][  T284] sched_process_exec: filename=/system/bin/lmkd pid=284 old_pid=284
+[  111.047315][  T276] sched_process_exit: comm=sed pid=276 prio=120
+[  111.128080][    T1] init: ... started service 'servicemanager' has pid 285
+[  111.130189][  T277] sched_process_exit: comm=sed pid=277 prio=120
+[  111.139615][    T1] init: Command 'start servicemanager' action=init (/system/etc/init/hw/init.rc:562) took 389ms and succeeded
+[  111.152665][    T1] init: starting service 'hwservicemanager'...
+[  111.201849][    T1] init: failed write pid 286 to memcg
+[  111.255130][  T283] sched_process_exec: filename=/system/bin/logd pid=283 old_pid=283
+[  111.274382][  T285] sched_process_exec: filename=/system/bin/servicemanager pid=285 old_pid=285
+[  111.309864][    T1] init: ... started service 'hwservicemanager' has pid 286
+[  111.311799][    T1] init: Command 'start hwservicemanager' action=init (/system/etc/init/hw/init.rc:563) took 168ms and succeeded
+[  111.332355][  T286] sched_process_exec: filename=/system/system_ext/bin/hwservicemanager pid=286 old_pid=286
+[  111.385844][    T1] init: starting service 'vndservicemanager'...
+[  111.663137][    T1] init: failed write pid 287 to memcg
+[  111.737605][  T278] sched_process_exit: comm=sort pid=278 prio=120
+[  111.811913][    T1] init: ... started service 'vndservicemanager' has pid 287
+[  111.813929][    T1] init: Command 'start vndservicemanager' action=init (/system/etc/init/hw/init.rc:564) took 463ms and succeeded
+[  111.907125][    T1] init: Command 'mkdir /mnt/vm 0755 root root' action=init (/system/etc/init/hw/init.rc:567) took 51ms and succeeded
+[  111.970128][  T279] sched_process_exit: comm=sort pid=279 prio=120
+[  112.038959][  T287] sched_process_exec: filename=/vendor/bin/vndservicemanager pid=287 old_pid=287
+[  112.140933][    T1] init: processing action (init) from (/system/etc/init/hw/init.usb.rc:28)
+[  112.162727][  T280] sched_process_exit: comm=cut pid=280 prio=120
+[  112.171332][    T1] init: processing action (init) from (/vendor/etc/init/hw/init.qcom.rc:94)
+[  112.188657][    T1] init: Command 'symlink /sdcard /mnt/sdcard' action=init (/vendor/etc/init/hw/init.qcom.rc:97) took 15ms and failed: symlink() failed: File exists
+[  112.206157][    T1] init: Command 'symlink /sdcard /storage/sdcard0' action=init (/vendor/etc/init/hw/init.qcom.rc:98) took 6ms and failed: symlink() failed: Read-only file system
+[  112.334664][  T281] sched_process_exit: comm=grep pid=281 prio=120
+[  112.370541][    T1] init: Command 'chmod 0660 /sys/fs/cgroup/memory/bg/tasks' action=init (/vendor/etc/init/hw/init.qcom.rc:105) took 58ms and succeeded
+[  112.377829][    T1] init: processing action (init) from (/vendor/etc/init/hw/init.qti.ufs.rc:29)
+[  112.402946][    T1] init: starting service 'exec 3 (/vendor/bin/sh /vendor/bin/init.qti.ufs.debug.sh)'...
+[  112.707142][    T1] init: failed write pid 288 to memcg
+[  113.068392][    T1] init: ... started service 'exec 3 (/vendor/bin/sh /vendor/bin/init.qti.ufs.debug.sh)' has pid 288
+[  113.084289][    T1] init: SVC_EXEC service 'exec 3 (/vendor/bin/sh /vendor/bin/init.qti.ufs.debug.sh)' pid 288 (uid 0 gid 0+0 context u:r:vendor-qti-testscripts:s0) started; waiting...
+[  113.128149][    T1] init: Command 'exec u:r:vendor-qti-testscripts:s0 -- /vendor/bin/sh /vendor/bin/init.qti.ufs.debug.sh' action=init (/vendor/etc/init/hw/init.qti.ufs.rc:30) took 736ms and succeeded
+[  113.262629][  T288] sched_process_exec: filename=/vendor/bin/sh pid=288 old_pid=288
+[  113.388590][  T282] sched_process_exit: comm=grep pid=282 prio=120
+[  113.702231][  T290] sched_process_exec: filename=/vendor/bin/cut pid=290 old_pid=290
+[  113.747471][  T289] sched_process_exit: comm=vendor_modprobe pid=289 prio=120
+[  113.900047][  T285] servicemanager: Starting sm instance on /dev/binder
+[  114.016059][  T285] SELinux: Multiple same specifications for vendor.qti.gnss.ILocAidlGnss/default.
+[  114.020826][  T285] SELinux: Multiple same specifications for vendor.qti.hardware.vpp.IVppService/default.
+[  114.030988][  T285] SELinux: Multiple same specifications for android.media.audio.IHalAdapterVendorExtension/default.
+[  114.033225][  T285] SELinux: Multiple same specifications for android.media.audio.IHalAdapterVendorExtension/default.
+[  114.046665][  T285] SELinux: Multiple same specifications for android.media.audio.IHalAdapterVendorExtension/default.
+[  114.069941][  T285] SELinux: SELinux: Loaded service context from:
+[  114.071813][  T285] SELinux: 		/system/etc/selinux/plat_service_contexts
+[  114.074284][  T285] SELinux: 		/system_ext/etc/selinux/system_ext_service_contexts
+[  114.078032][  T285] SELinux: 		/product/etc/selinux/product_service_contexts
+[  114.079943][  T285] SELinux: 		/vendor/etc/selinux/vendor_service_contexts
+[  114.082051][  T285] SELinux: 		/odm/etc/selinux/odm_service_contexts
+[  114.282307][  T287] vndservicemanager: Starting sm instance on /dev/vndbinder
+[  114.372365][  T287] SELinux: SELinux: Loaded vndservice context from:
+[  114.374012][  T287] SELinux: 		/vendor/etc/selinux/vndservice_contexts
+[  114.497748][  T288] sched_process_exit: comm=sh pid=288 prio=120
+[  114.515996][    T1] init: Service 'exec 3 (/vendor/bin/sh /vendor/bin/init.qti.ufs.debug.sh)' (pid 288) exited with status 127 waiting took 1.749000 seconds
+[  114.518531][    T1] init: Sending signal 9 to service 'exec 3 (/vendor/bin/sh /vendor/bin/init.qti.ufs.debug.sh)' (pid 288) process group...
+[  114.547879][    T1] libprocessgroup: Removed cgroup /sys/fs/cgroup/system/uid_0/pid_288
+[  114.553825][    T1] init: processing action (init) from (/vendor/etc/init/hw/init.target.rc:76)
+[  114.566709][    T1] init: Command 'wait /dev/block/platform/soc/${ro.boot.bootdevice}' action=init (/vendor/etc/init/hw/init.target.rc:77) took 10ms and failed: property 'ro.boot.bootdevice' doesn't exist while expanding '/dev/block/platform/soc/${ro.boot.bootdevice}'
+[  114.586802][    T1] init: Command 'symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice' action=init (/vendor/etc/init/hw/init.target.rc:78) took 3ms and failed: property 'ro.boot.bootdevice' doesn't exist while expanding '/dev/block/platform/soc/${ro.boot.bootdevice}'
+[  114.613448][    T1] init: service 'logd' requested start, but it is already running (flags: 4)
+[  114.711846][  T285] cutils-trace: Error opening trace file: No such file or directory (2)
+[  114.724229][  T285] servicemanager: getDeviceHalManifest: Reading VINTF information.
+[  114.737800][  T285] servicemanager: Loaded APEX Infos from /bootstrap-apex/apex-info-list.xml
+[  114.833076][  T285] servicemanager: getDeviceHalManifest: Successfully processed VINTF information
+[  114.835578][  T285] servicemanager: getFrameworkHalManifest: Reading VINTF information.
+[  114.857981][    T1] init: Command 'mkdir /dev/cpuctl/general' action=init (/vendor/etc/init/hw/init.target.rc:82) took 241ms and succeeded
+[  114.865060][   T29] audit: type=1400 audit(1793856745.864:32): avc:  denied  { getattr } for  pid=87 comm="init" path="/dev/cpuctl/tasks" dev="cgroup" ino=5 scontext=u:r:vendor_init:s0 tcontext=u:object_r:cgroup:s0 tclass=file permissive=0
+[  114.915678][  T285] servicemanager: Loaded APEX Infos from /bootstrap-apex/apex-info-list.xml
+[  114.919806][  T285] servicemanager: Cannot filter framework manifest HALs properly because target FCM version is unspecified in the device manifest. Treating as infinitely old device.
+[  114.922480][  T285] servicemanager: getFrameworkHalManifest: Successfully processed VINTF information
+[  114.939096][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.024020][  T290] sched_process_exit: comm=cut pid=290 prio=120
+[  115.170964][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.209793][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.241154][  T292] sched_process_exit: comm=vendor_modprobe pid=292 prio=120
+[  115.242937][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.247061][  T293] sched_process_exec: filename=/vendor/bin/cut pid=293 old_pid=293
+[  115.277868][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.302053][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.326044][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.351620][  T285] servicemanager: Caller(pid=284,uid=1069,sid=u:r:lmkd:s0) Could not find vendor.qti.hardware.perf2.IPerf/default in the VINTF manifest. No alternative instances declared in VINTF.
+[  115.656674][   T29] audit: type=1400 audit(1793856746.656:33): avc:  denied  { read } for  pid=284 comm="lmkd" name="u:object_r:vendor_camera_prop:s0" dev="tmpfs" ino=468 scontext=u:r:lmkd:s0 tcontext=u:object_r:vendor_camera_prop:s0 tclass=file permissive=0
+[  115.676581][   T29] audit: type=1400 audit(1793856746.676:34): avc:  denied  { read } for  pid=284 comm="lmkd" name="u:object_r:vendor_camera_prop:s0" dev="tmpfs" ino=468 scontext=u:r:lmkd:s0 tcontext=u:object_r:vendor_camera_prop:s0 tclass=file permissive=0
+[  116.370771][  T293] sched_process_exit: comm=cut pid=293 prio=120
+[  116.462947][  T299] sched_process_exec: filename=/vendor/bin/modprobe pid=299 old_pid=299
+[  116.713590][  T283] logd: libprocessgroup: JoinCgroup: controller schedtune is not found
+[  117.284203][  T299] modprobe: malformed modules.softdep at token mpam_policy
+[  117.307037][  T299] modprobe: Loading module /vendor/lib/modules/msm_sysstats.ko with args ''
+[  117.317465][  T299] msm_sysstats: Unknown symbol qcom_is_dma_buf_file (err -2)
+[  117.333043][  T299] modprobe: Failed to insmod '/vendor/lib/modules/msm_sysstats.ko' with args '': No such file or directory
+[  117.334571][  T299] modprobe: LoadWithAliases was unable to load msm_sysstats.ko
+[  117.336389][  T299] modprobe: Failed to load module msm_sysstats.ko: No such file or directory
+[  117.402786][  T299] sched_process_exit: comm=modprobe pid=299 prio=120
+[  117.472296][  T249] sched_process_exit: comm=vendor_modprobe pid=249 prio=120
+[  117.534874][  T283] logd.auditd: start
+[  117.571157][  T283] logd.klogd: 117068521000
+[  118.273593][  T283] logd: Loaded bug_map file: /system_ext/etc/selinux/bug_map
+[  118.301218][  T283] logd: Loaded bug_map file: /vendor/etc/selinux/selinux_denial_metadata
+[  118.320182][  T283] logd: Loaded bug_map file: /system/etc/selinux/bug_map
